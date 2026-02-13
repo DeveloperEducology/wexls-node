@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String?
+  image         String?
+  role          String    @default("PARENT") // PARENT, TUTOR, ADMIN
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  tutorProfile  TutorProfile?
+  reviews       Review[]     @relation("WrittenReviews")
+  bookings      Booking[]
+}
+
+model TutorProfile {
+  id              String    @id @default(cuid())
+  userId          String    @unique
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bio             String?
+  hourlyRate      Float?
+  subjects        String?   // JSON
+  certifications  String?   // JSON
+  status          String    @default("PENDING") // PENDING, APPROVED, REJECTED
+  
+  bookings        Booking[]
+  reviews         Review[]  @relation("ReceivedReviews")
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int
+  comment   String?
+  
+  tutorId   String
+  tutor     TutorProfile @relation("ReceivedReviews", fields: [tutorId], references: [id])
+  
+  authorId  String
+  author    User     @relation("WrittenReviews", fields: [authorId], references: [id])
+  
+  createdAt DateTime @default(now())
+}
+
+model Booking {
+  id        String   @id @default(cuid())
+  startTime DateTime
+  endTime   DateTime
+  status    String   @default("PENDING") // PENDING, CONFIRMED, CANCELLED
+  
+  tutorId   String
+  tutor     TutorProfile @relation(fields: [tutorId], references: [id])
+  
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+}

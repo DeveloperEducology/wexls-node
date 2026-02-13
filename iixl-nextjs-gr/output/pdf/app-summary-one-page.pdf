@@ -1,0 +1,65 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 3005 >>
+stream
+BT /F2 18 Tf 1 0 0 1 54 756 Tm (IIXL Next.js App - One-Page Summary) Tj ET
+BT /F2 12 Tf 1 0 0 1 54 730 Tm (What it is) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 715 Tm (A Next.js educational web app modeled after IXL-style learning flows for school students.) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 702 Tm (It lets users pick a grade, browse subject skills, and practice question types with live feedback.) Tj ET
+BT /F2 12 Tf 1 0 0 1 54 680 Tm (Who it's for) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 665 Tm (Primary persona: school students \(Class 1 to Class 9\) practicing Math/English/Science microskills.) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 652 Tm (Secondary audience shown in copy/metadata: educators and parents. \(Auth roles: Not found in repo.\)) Tj ET
+BT /F2 12 Tf 1 0 0 1 54 630 Tm (What it does) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 615 Tm (- Shows a landing page with grade cards and subject entry points.) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 602 Tm (- Computes per-subject skill counts from in-repo curriculum data.) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 589 Tm (- Renders a skills catalog by grade + subject with unit grouping in 3 columns.) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 576 Tm (- Opens a practice experience per microskill route with mixed question types.) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 563 Tm (- Tracks SmartScore, streak, tokens, challenge stages, and elapsed time in client state.) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 550 Tm (- Validates answers and shows immediate correctness + solution feedback.) Tj ET
+BT /F2 12 Tf 1 0 0 1 54 528 Tm (How it works \(repo evidence only\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 513 Tm (- Routing/UI components: App Router pages at /, /skills/[gradeId]/[subjectSlug], /practice/[microskillId].) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 500 Tm (- Data layer: src/data/curriculum.js exports grade/subject/unit/microskill arrays + helper selectors.) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 487 Tm (- Practice engine: page-level state + validateAnswer logic + QuestionRenderer type dispatch map.) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 474 Tm (- Service/backend boundary: API routes, DB integration, auth, and persistence are Not found in repo.) Tj ET
+BT /F2 12 Tf 1 0 0 1 54 452 Tm (How to run \(minimal\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 437 Tm (1. From repo root, install dependencies: npm install) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 424 Tm (2. Start dev server: npm run dev) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 411 Tm (3. Open http://localhost:3000) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 398 Tm (4. Optional production check: npm run build && npm run start) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 385 Tm (Node.js version requirement: Not found in repo.) Tj ET
+BT /F1 10 Tf 1 0 0 1 66 372 Tm (Environment variables/config secrets: Not found in repo.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54 346 Tm (Evidence files: src/app/page.js, src/app/skills/[gradeId]/[subjectSlug]/page.js,) Tj ET
+BT /F1 9 Tf 1 0 0 1 54 335 Tm (src/app/practice/[microskillId]/page.js, src/components/practice/QuestionRenderer.js,) Tj ET
+BT /F1 9 Tf 1 0 0 1 54 324 Tm (src/data/curriculum.js, package.json, README.md) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000327 00000 n 
+0000000402 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3459
+%%EOF
