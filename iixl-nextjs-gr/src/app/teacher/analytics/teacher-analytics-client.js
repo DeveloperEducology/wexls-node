@@ -284,6 +284,7 @@ export default function TeacherAnalyticsClient({ initialStudentId = '', initialM
               <thead>
                 <tr>
                   <th>Time</th>
+                  <th>Adaptive</th>
                   <th>Qn</th>
                   <th>Correct</th>
                   <th>Delta</th>
@@ -298,12 +299,13 @@ export default function TeacherAnalyticsClient({ initialStudentId = '', initialM
                 {rows.map((row) => (
                   <tr key={row.id}>
                     <td>{new Date(row.createdAt).toLocaleTimeString()}</td>
+                    <td>{row.isAdaptive ? 'Yes' : 'No'}</td>
                     <td>{String(row.questionId).slice(0, 8)}...</td>
                     <td>{row.isCorrect ? 'Yes' : 'No'}</td>
                     <td>{row.estimatedDelta > 0 ? `+${row.estimatedDelta}` : row.estimatedDelta}</td>
                     <td>{row.factors?.phase}</td>
-                    <td>{row.factors?.difficulty}</td>
-                    <td>{row.factors?.responseMs}</td>
+                    <td>{row.factors?.difficulty !== 'undefined' ? row.factors?.difficulty : '-'}</td>
+                    <td>{row.factors?.responseMs || '-'}</td>
                     <td>{row.selectionMeta?.reason || '-'}</td>
                     <td>{row.factors?.misconceptionCode || '-'}</td>
                   </tr>

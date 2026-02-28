@@ -166,54 +166,68 @@ export async function POST(req) {
       .order('created_at', { ascending: false })
       .limit(Math.max(120, limit));
 
+    let queryLog = supabase.from('student_question_log')
+      .select('id,question_id,is_correct,created_at')
+      .eq('student_id', studentId)
+      .eq('microskill_id', microskillId)
+      .order('created_at', { ascending: false })
+      .limit(Math.max(120, limit));
+
     if (dateFrom) {
       const fromIso = new Date(`${dateFrom}T00:00:00.000Z`).toISOString();
       query = query.gte('created_at', fromIso);
+      queryLog = queryLog.gte('created_at', fromIso);
     }
 
     if (dateTo) {
       const toIso = new Date(`${dateTo}T23:59:59.999Z`).toISOString();
       query = query.lte('created_at', toIso);
+      queryLog = queryLog.lte('created_at', toIso);
     }
 
-    const { data, error } = await query;
+    const [eventRes, logRes] = await Promise.all([query, queryLog]);
 
-    if (error) {
-      return NextResponse.json({ error: error.message ?? 'Failed to fetch score breakdown.' }, { status: 500 });
+    if (eventRes.error) {
+      return NextResponse.json({ error: eventRes.error.message ?? 'Failed to fetch score breakdown.' }, { status: 500 });
     }
+
+    const events = (eventRes.data || []).map(r => ({ ...r, _ADAPTIVE: true }));
+    const logs = (logRes.data || []).map(r => ({ ...r, _ADAPTIVE: false }));
+    const data = [...events, ...logs].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 
     let rows = (data || []).map((row) => {
-    const payloadObj = row.correct_payload || {};
-    const selectionMeta = payloadObj?.idempotency?.responsePayload?.selectionMeta || {};
-    const serverSmartScoreDelta = Number(payloadObj?.idempotency?.responsePayload?.smartScore?.delta);
-    const phase = String(payloadObj?.sessionUpdate?.phase ?? 'core');
-    const confidence = Number(payloadObj?.masteryUpdate?.confidence ?? 0.4);
-    const mastery = Number(payloadObj?.masteryUpdate?.newScore ?? 0.5);
-    return {
-      id: row.id,
-      questionId: row.question_id,
-      createdAt: row.created_at,
-      isCorrect: Boolean(row.is_correct),
-      estimatedDelta: Number.isFinite(serverSmartScoreDelta) ? serverSmartScoreDelta : estimateDelta(row),
-      selectionMeta: {
-        reason: selectionMeta?.reason || null,
-        policy: selectionMeta?.policy || null,
-        remediationCode: selectionMeta?.remediationCode || null,
-        remediationRemaining: Number(selectionMeta?.remediationRemaining ?? 0),
-      },
-      factors: {
-        phase,
-        difficulty: String(row.selected_difficulty || 'easy'),
-        masteryScore: mastery,
-        confidence,
-        responseMs: Number(row.response_ms ?? 0),
-        attemptsOnQuestion: Number(row.attempts_on_question ?? 1),
-        hintUsed: Boolean(row.hint_used),
-        conceptTags: row.concept_tags || [],
-        misconceptionCode: row.misconception_code || null,
-      },
-    };
-  });
+      const payloadObj = row.correct_payload || {};
+      const selectionMeta = payloadObj?.idempotency?.responsePayload?.selectionMeta || {};
+      const serverSmartScoreDelta = Number(payloadObj?.idempotency?.responsePayload?.smartScore?.delta);
+      const phase = row._ADAPTIVE ? String(payloadObj?.sessionUpdate?.phase ?? 'core') : 'practice';
+      const confidence = Number(payloadObj?.masteryUpdate?.confidence ?? 0.4);
+      const mastery = Number(payloadObj?.masteryUpdate?.newScore ?? 0.5);
+      return {
+        id: row.id,
+        questionId: row.question_id,
+        createdAt: row.created_at,
+        isCorrect: Boolean(row.is_correct),
+        isAdaptive: Boolean(row._ADAPTIVE),
+        estimatedDelta: row._ADAPTIVE ? (Number.isFinite(serverSmartScoreDelta) ? serverSmartScoreDelta : estimateDelta(row)) : 0,
+        selectionMeta: {
+          reason: selectionMeta?.reason || null,
+          policy: selectionMeta?.policy || null,
+          remediationCode: selectionMeta?.remediationCode || null,
+          remediationRemaining: Number(selectionMeta?.remediationRemaining ?? 0),
+        },
+        factors: {
+          phase,
+          difficulty: String(row.selected_difficulty || 'easy'),
+          masteryScore: mastery,
+          confidence,
+          responseMs: Number(row.response_ms ?? 0),
+          attemptsOnQuestion: Number(row.attempts_on_question ?? 1),
+          hintUsed: Boolean(row.hint_used),
+          conceptTags: row.concept_tags || [],
+          misconceptionCode: row.misconception_code || null,
+        },
+      };
+    });
 
     if (phaseFilter) {
       rows = rows.filter((row) => String(row?.factors?.phase || '').toLowerCase() === phaseFilter);
