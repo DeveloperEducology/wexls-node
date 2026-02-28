@@ -147,7 +147,7 @@ const getAllCurriculumRows = cache(async function getAllCurriculumRows() {
   let gradesRows = null, subjectsRows = null, unitsRows = null, microskillsRows = null;
 
   try {
-    const { connectMongo } = require('../../../../backend/src/db/mongo');
+    const { connectMongo } = require('../../../backend/src/db/mongo');
     const mongoose = require('mongoose');
 
     await connectMongo();
