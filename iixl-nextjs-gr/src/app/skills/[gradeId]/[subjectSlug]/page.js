@@ -3,6 +3,8 @@ import styles from './skills.module.css';
 import { absoluteUrl } from '@/lib/seo';
 import { getSkillsPageData } from '@/lib/curriculum/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({ params }) {
     const resolvedParams = await params;
     const { gradeId, subjectSlug } = resolvedParams;
@@ -22,7 +24,7 @@ export async function generateMetadata({ params }) {
     const description = `Explore ${currentSubject.name} skills for ${grade.name} and start interactive practice.`;
     const path = `/skills/${gradeId}/${subjectSlug}`;
 
-  return {
+    return {
         title,
         description,
         alternates: {
@@ -39,7 +41,7 @@ export async function generateMetadata({ params }) {
             title,
             description,
         },
-  };
+    };
 }
 
 export default async function SkillsPage({ params }) {
