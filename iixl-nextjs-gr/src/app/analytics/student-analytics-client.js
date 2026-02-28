@@ -127,10 +127,6 @@ export default function StudentAnalyticsClient() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [studentId, microSkillId]);
 
-    if (loading) {
-        return <div className={styles.page}><p>Loading your analytics...</p></div>;
-    }
-
     const rows = data?.rows || [];
     const diagnostics = data?.diagnostics || null;
     const adaptiveSummary = data?.summary || null;
@@ -146,6 +142,10 @@ export default function StudentAnalyticsClient() {
     const accuracySeries = rows.map((r) => (r.isCorrect ? 100 : 0)).reverse();
     const deltaSeries = rows.map((r) => Number(r.estimatedDelta || 0)).reverse();
     const speedSeries = rows.map((r) => Number(r.factors?.responseMs || 0)).reverse();
+
+    if (loading) {
+        return <div className={styles.page}><p>Loading your analytics...</p></div>;
+    }
 
     return (
         <div className={styles.page}>
