@@ -147,18 +147,43 @@ const getAllCurriculumRows = cache(async function getAllCurriculumRows() {
   let gradesRows = null, subjectsRows = null, unitsRows = null, microskillsRows = null;
 
   try {
-    const fetchUrl = backendUrl('/api/curriculum');
-    const backendRes = await fetch(fetchUrl, { cache: 'no-store' });
+    const { connectMongo } = require('../../../../backend/src/db/mongo');
+    const mongoose = require('mongoose');
 
-    if (backendRes.ok) {
-      const payload = await backendRes.json();
-      gradesRows = payload.grades;
-      subjectsRows = payload.subjects;
-      unitsRows = payload.units;
-      microskillsRows = payload.microskills;
-    } else {
-      serverLog('curriculum.getAllCurriculumRows', 'MongoDB backend returned error status', { status: backendRes.status });
+    await connectMongo();
+    const db = mongoose.connection.db;
+
+    const filterCondition = { type: { $exists: false }, parts: { $exists: false } };
+    const [grades, subjects, units, microskills, oldMicroskills] = await Promise.all([
+      db.collection("grades").find(filterCondition).toArray(),
+      db.collection("subjects").find(filterCondition).toArray(),
+      db.collection("units").find(filterCondition).toArray(),
+      db.collection("microskills").find(filterCondition).toArray(),
+      db.collection("micro_skills").find(filterCondition).toArray(),
+    ]);
+
+    const normalizeId = (item) => {
+      if (!item) return item;
+      if (item._id && !item.id) item.id = String(item._id);
+      return item;
+    };
+
+    gradesRows = grades.map(normalizeId);
+    subjectsRows = subjects.map(normalizeId);
+    unitsRows = units.map(normalizeId);
+
+    const mergedMicroskills = [];
+    const seenIds = new Set();
+    for (const item of [...microskills, ...oldMicroskills]) {
+      const norm = normalizeId(item);
+      const strId = String(norm.id);
+      if (!seenIds.has(strId)) {
+        seenIds.add(strId);
+        mergedMicroskills.push(norm);
+      }
     }
+    microskillsRows = mergedMicroskills;
+
   } catch (err) {
     serverLog('curriculum.getAllCurriculumRows', 'MongoDB backend curriculum fetch failed', { message: err?.message });
   }
