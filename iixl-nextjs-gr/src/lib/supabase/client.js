@@ -23,7 +23,7 @@ function emitAuth(event, user) {
   for (const listener of listeners) {
     try {
       listener(event, session);
-    } catch {}
+    } catch { }
   }
 }
 
@@ -45,17 +45,41 @@ function buildUser(email) {
 export function createClient() {
   return {
     auth: {
-      async signInWithPassword({ email }) {
-        const user = buildUser(email);
-        writeUser(user);
-        emitAuth('SIGNED_IN', user);
-        return { data: { user, session: { user } }, error: null };
+      async signInWithPassword({ email, password }) {
+        if (typeof window === 'undefined') return { error: { message: 'Server context' } };
+        try {
+          const res = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+          });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.error || 'Login failed');
+
+          writeUser(data.user);
+          emitAuth('SIGNED_IN', data.user);
+          return { data: { user: data.user, session: { user: data.user } }, error: null };
+        } catch (error) {
+          return { data: null, error };
+        }
       },
-      async signUp({ email }) {
-        const user = buildUser(email);
-        writeUser(user);
-        emitAuth('SIGNED_IN', user);
-        return { data: { user, session: { user } }, error: null };
+      async signUp({ email, password, name, birthYear, gradeId }) {
+        if (typeof window === 'undefined') return { error: { message: 'Server context' } };
+        try {
+          const res = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password, name, birthYear, gradeId }),
+          });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.error || 'Registration failed');
+
+          writeUser(data.user);
+          emitAuth('SIGNED_IN', data.user);
+          return { data: { user: data.user, session: { user: data.user } }, error: null };
+        } catch (error) {
+          return { data: null, error };
+        }
       },
       async getUser() {
         const user = readUser();

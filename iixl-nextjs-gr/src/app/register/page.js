@@ -8,7 +8,9 @@ import styles from './auth.module.css';
 
 export default function RegisterPage() {
   const router = useRouter();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [birthYear, setBirthYear] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -56,6 +58,8 @@ export default function RegisterPage() {
       const { error: signUpError, data } = await supabase.auth.signUp({
         email: email.trim(),
         password,
+        name: name.trim(),
+        birthYear: birthYear ? Number(birthYear) : null
       });
       if (signUpError) throw signUpError;
 
@@ -84,6 +88,17 @@ export default function RegisterPage() {
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <label>
+            Full Name
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              placeholder="John Doe"
+            />
+          </label>
+
+          <label>
             Email
             <input
               type="email"
@@ -92,6 +107,18 @@ export default function RegisterPage() {
               required
               autoComplete="email"
               placeholder="you@example.com"
+            />
+          </label>
+
+          <label>
+            Birth Year (Optional)
+            <input
+              type="number"
+              min="1900"
+              max={new Date().getFullYear()}
+              value={birthYear}
+              onChange={(e) => setBirthYear(e.target.value)}
+              placeholder="e.g. 2010"
             />
           </label>
 
