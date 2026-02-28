@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    max-width: 700px;
+    max-width: 100%;
 }
 
 .questionCard {
@@ -12,23 +12,142 @@
 }
 
 .questionContent {
+    width: 100%;
     margin-bottom: 2rem;
     font-size: 1.05rem;
     line-height: 2;
     color: var(--text-primary);
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
+}
+
+.questionTextRow {
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+.questionText {
+    display: block;
+    font-size: clamp(0.98rem, 1.5vw, 1.3rem);
+    line-height: 1.35;
+    font-weight: 700;
+    color: #1f2937;
+    word-break: break-word;
+}
+
+.partWrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.inlinePart {
+    width: auto;
+    justify-content: left;
+}
+
+.verticalPart {
+    width: 100%;
+    justify-content: left;
+}
+
+.pairedRow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.1rem 0 0.2rem;
+}
+
+.pairedRow .verticalPart,
+.pairedRow .inlinePart {
+    width: auto;
+}
+
+.pairedRow .textWithSpeaker {
+    gap: 0.45rem;
 }
 
 .text {
     display: inline;
 }
 
+.textWithSpeaker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.mathLatex {
+    font-size: 1.18rem;
+    line-height: 1.45;
+    color: #111827;
+    font-weight: 600;
+}
+
+.mathLatex :global(.katex .mord),
+.mathLatex :global(.katex .mbin),
+.mathLatex :global(.katex .mrel) {
+    margin-right: 0.14em;
+}
+
+.mathLatexWrap {
+    width: 100%;
+}
+
+.mathLatexInteractive {
+    position: relative;
+    display: inline-block;
+}
+
+.mathLatexInteractive :global([data-blank-id]) {
+    color: transparent;
+}
+
+.mathLatexDisplay {
+    width: 100%;
+}
+
+.mathLatexInputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+.latexInlineInput {
+    position: absolute;
+    transform: translate(0, 0);
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    border: 1.5px solid #c084fc;
+    border-radius: 2px;
+    background: #fff;
+    color: #111827;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    box-shadow: none;
+}
+
+.latexInlineInput:focus {
+    border-color: #7c3aed;
+    box-shadow: none;
+}
+
+.inlineSpeaker {
+    width: 24px;
+    height: 24px;
+}
+
 .imageContainer {
     display: inline-flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     vertical-align: middle;
     margin: 0 0.25rem;
 }
@@ -45,7 +164,7 @@
 }
 
 .input {
-    padding: 0.5rem 0.75rem;
+    padding: 0.3rem 0.75rem;
     font-size: 0.96rem;
     border: 2px solid #cbd5e1;
     border-radius: var(--border-radius-sm);
@@ -65,17 +184,320 @@
     cursor: not-allowed;
 }
 
-.submitButton {
+.arithmeticLayout {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --ar-cell-size: 44px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0.25rem auto 0.5rem;
+    color: #111827;
+}
+
+.arTextRow {
+    line-height: 1.1;
+}
+
+.arLabelRow {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap: 1.2rem;
+    min-height: 52px;
+    margin-bottom: 0.15rem;
+    padding-right: 0.1rem;
+}
+
+.arLabelWord {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    font-family: "Nunito", "Baloo 2", "Segoe UI", sans-serif;
+}
+
+.arGridRow {
+    display: grid;
+    grid-template-columns: repeat(var(--cols, 1), var(--ar-cell-size));
+    justify-content: end;
+    align-items: end;
+}
+
+.arGridCell {
+    width: var(--ar-cell-size);
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.arDivider {
+    border-top: 2px solid #111827;
+    margin: 0.15rem 0 0.25rem;
+    width: calc(var(--cols, 1) * var(--ar-cell-size));
+}
+
+.arAnswerRow {
+    line-height: 1;
+}
+
+.arPrefixCell {
+    color: #1f2f46;
+}
+
+.arCellInput {
+    width: 38px;
+    height: 46px;
+    border: 1.5px solid #c084fc;
+    border-radius: 2px;
+    background: #fff;
+    color: #111827;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.arCellInputActive {
+    border-color: #7c3aed;
+    box-shadow: none;
+    background: #fff;
+}
+
+.arCellInput:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: none;
+}
+
+.arDigitPad {
+    margin-top: 0.8rem;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.4rem;
+}
+
+.arPadBtn {
+    border: 1px solid #b9d8ef;
+    border-radius: 8px;
+    background: #fff;
+    color: #1f2f46;
+    font-size: 0.95rem;
+    font-weight: 700;
+    height: 34px;
+    cursor: pointer;
+}
+
+.arPadBtn:hover {
+    border-color: #7fbce4;
+    background: #f5fbff;
+}
+
+.pictureEq {
     width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    align-items: end;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.pictureTerm {
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.pictureEmoji {
+    min-height: 42px;
+    font-size: 2rem;
+    line-height: 1.05;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.pictureOp {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #18283d;
+    line-height: 1;
+    align-self: center;
+}
+
+.pictureBox {
+    width: 86px;
+    height: 44px;
+    border: 2px solid #8d8d8d;
+    border-radius: 2px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.pictureBox:focus {
+    outline: none;
+    border-color: #0f6ea8;
+    box-shadow: 0 0 0 2px rgba(15, 110, 168, 0.14);
+}
+
+.pictureFooter {
+    grid-column: 1 / -1;
+    text-align: left;
+    font-size: 1.4rem;
+    margin-top: 0.15rem;
+}
+
+.gridArithmeticWrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+    padding: 0.2rem 0;
+}
+
+.gridArithmetic {
+    display: grid;
+    width: max-content;
+    margin: 0 auto;
+    border: none;
+    background: transparent;
+}
+
+.gridCell {
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 0;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.gridBackground {
+    border: 1px solid #d1d5db;
+    background: #f8fafc;
+}
+
+.gridInputHost {
+    background: #fff;
+    border: 2px solid #7c3aed;
+}
+
+.gridFixedText {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+}
+
+.gridCellInput {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111827;
+    padding: 0;
+}
+
+.gridCellInput:focus {
+    outline: 2px solid #7c3aed;
+    outline-offset: -2px;
+    background: #fff;
+}
+
+.butterflyWrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.butterflyStage {
+    width: min(100%, var(--bf-width));
+}
+
+.butterflyCanvas {
+    position: relative;
+    width: var(--bf-width);
+    height: var(--bf-height);
+    transform: scale(var(--bf-scale, 1));
+    transform-origin: top center;
+    margin: 0 auto;
+}
+
+.butterflySvg {
+    width: 100%;
+    height: 100%;
+}
+
+.bfNumber {
+    font-size: 50px;
+    font-weight: 700;
+    fill: #111827;
+    font-family: "Nunito", "Baloo 2", "Segoe UI", sans-serif;
+}
+
+.bfOperator {
+    font-size: 50px;
+    font-weight: 700;
+    fill: #1f2937;
+    font-family: "Nunito", "Baloo 2", "Segoe UI", sans-serif;
+}
+
+.bfResultColumn {
+    position: absolute;
+    left: 80%;
+    top: 36%;
+    width: 12%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bfResultBar {
+    width: 100%;
+    height: 3px;
+    background: #1e3a8a;
+}
+
+.bfInput {
+    position: absolute;
+    border: 2px solid #3b82f6;
+    border-radius: 3px;
+    background: #fff;
+    color: #111827;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0;
+}
+
+.bfInput:focus {
+    outline: none;
+    border-color: #16a34a;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.16);
+}
+
+.submitButton {
+    width: min(220px, 100%);
     background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
     color: white;
     border: none;
-    padding: 1rem 2rem;
+    padding: 0.62rem 1rem;
     border-radius: var(--border-radius-lg);
     font-weight: 600;
-    font-size: 0.96rem;
+    font-size: 0.88rem;
     cursor: pointer;
     transition: var(--transition-base);
+    margin: 0.75rem auto 0;
+    display: block;
 }
 
 .submitButton:hover {
@@ -93,8 +515,98 @@
         line-height: 1.8;
     }
 
+    .questionTextRow {
+        margin-bottom: 0.6rem;
+    }
+
+    .questionText {
+        font-size: clamp(0.9rem, 4vw, 1.08rem);
+        line-height: 1.3;
+    }
+
     .input {
         font-size: 0.9rem;
         padding: 0.4rem 0.6rem;
+    }
+
+    .arithmeticLayout {
+        --ar-cell-size: 36px;
+    }
+
+    .arGridCell {
+        width: var(--ar-cell-size);
+        height: 44px;
+        font-size: 1.6rem;
+    }
+
+    .arLabelRow {
+        min-height: 44px;
+        gap: 0.9rem;
+    }
+
+    .arLabelWord {
+        font-size: 1.6rem;
+    }
+
+    .arCellInput {
+        width: 30px;
+        height: 38px;
+        font-size: 1.3rem;
+    }
+
+    .arDigitPad {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.35rem;
+    }
+
+    .arPadBtn {
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .bfInput {
+        font-size: 1rem;
+    }
+
+    .pictureEq {
+        grid-template-columns: auto;
+        justify-items: center;
+        align-items: center;
+        gap: 0.55rem;
+    }
+
+    .pictureTerm {
+        min-width: 0;
+    }
+
+    .pictureEmoji {
+        font-size: 1.65rem;
+        min-height: 34px;
+    }
+
+    .pictureOp {
+        font-size: 1.7rem;
+    }
+
+    .pictureBox {
+        width: 78px;
+        height: 40px;
+        font-size: 1.15rem;
+    }
+
+    .pictureFooter {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .pairedRow {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    .pairedRow .verticalPart,
+    .pairedRow .inlinePart {
+        width: 100%;
     }
 }

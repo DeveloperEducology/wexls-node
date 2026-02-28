@@ -1,0 +1,433 @@
+[
+  {
+    
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 1,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which number is greatest?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["34", "43", "29", "30"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "43 is the greatest number.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["compare_numbers", "place_value"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "misconceptionCode": "comparison_error",
+      "misconceptionByOption": {
+        "0": "comparison_reversal",
+        "2": "ones_only_compare",
+        "3": "random_guess"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 2,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "7 + 5 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_1",
+        "type": "input",
+        "content": "",
+        "isVertical": false,
+        "hasAudio": false,
+        "expectedType": "number"
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_1\":\"12\"}",
+    "solution": "7 + 5 = 12.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["addition", "number_facts_to_20"],
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "misconceptionCode": "add_fact_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    
+    "type": "sorting",
+    "difficulty": "easy",
+    "complexity": 12,
+    "marks": 1,
+    "sort_order": 3,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Put these numbers in ascending order.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [
+      { "id": "n1", "content": "18" },
+      { "id": "n2", "content": "12" },
+      { "id": "n3", "content": "15" }
+    ],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "[\"n2\",\"n3\",\"n1\"]",
+    "solution": "12, 15, 18 is ascending.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["number_order", "ascending_descending"],
+      "targetComplexityBand": "low",
+      "inputMode": "drag_sort",
+      "misconceptionCode": "ord_reversed_rule",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    
+    "type": "textInput",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 4,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Type the missing number: 10, 20, 30, __",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "40",
+    "solution": "The pattern increases by 10, so next is 40.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["skip_counting", "number_patterns"],
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "misconceptionCode": "pattern_step_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    
+    "type": "imageChoice",
+    "difficulty": "easy",
+    "complexity": 9,
+    "marks": 1,
+    "sort_order": 5,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which shape is a triangle?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [
+      "<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"30\" fill=\"#60a5fa\"/></svg>",
+      "<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><rect x=\"20\" y=\"20\" width=\"60\" height=\"60\" fill=\"#34d399\"/></svg>",
+      "<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><polygon points=\"50,15 85,80 15,80\" fill=\"#f59e0b\"/></svg>",
+      "<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><ellipse cx=\"50\" cy=\"50\" rx=\"35\" ry=\"20\" fill=\"#f472b6\"/></svg>"
+    ],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 2,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "The third image is a triangle.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["shapes_2d", "triangle_identification"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "misconceptionByOption": {
+        "0": "shape_confusion_circle_triangle",
+        "1": "shape_confusion_square_triangle",
+        "3": "shape_confusion_oval_triangle"
+      },
+      "misconceptionCode": "shape_identification_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    
+    "type": "measure",
+    "difficulty": "medium",
+    "complexity": 20,
+    "marks": 1,
+    "sort_order": 6,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Measure the length of the dark line.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "6",
+    "solution": "The line is 6 cm long.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["measurement", "length_cm"],
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "unit": "cm",
+      "object_width": 280,
+      "line_units": 6,
+      "target_units": 6,
+      "misconceptionCode": "meas_start_not_zero",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    
+    "type": "dragAndDrop",
+    "difficulty": "easy",
+    "complexity": 14,
+    "marks": 1,
+    "sort_order": 7,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Sort by color: red or green.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drop_groups": [
+      { "id": "red", "label": "Red" },
+      { "id": "green", "label": "Green" }
+    ],
+    "drag_items": [
+      { "id": "i1", "content": "🍎", "targetGroupId": "red" },
+      { "id": "i2", "content": "🍓", "targetGroupId": "red" },
+      { "id": "i3", "content": "🥒", "targetGroupId": "green" },
+      { "id": "i4", "content": "🥬", "targetGroupId": "green" }
+    ],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Apple and strawberry are red. Cucumber and lettuce are green.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["classification", "colors"],
+      "targetComplexityBand": "low",
+      "inputMode": "drag_drop",
+      "misconceptionCode": "grouping_rule_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 18,
+    "marks": 1,
+    "sort_order": 8,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "45 + 37 = ?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["72", "82", "92", "73"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "45 + 37 = 82.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["addition", "carry_over"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "misconceptionCode": "add_with_carry_error",
+      "misconceptionByOption": {
+        "0": "add_no_carry",
+        "2": "add_extra_ten",
+        "3": "ones_digit_error"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    
+    "type": "fourPicsOneWord",
+    "difficulty": "easy",
+    "complexity": 11,
+    "marks": 1,
+    "sort_order": 9,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "What season is shown?",
+        "isVertical": true,
+        "hasAudio": true
+      },
+      {
+        "id": "img1",
+        "type": "image",
+        "imageUrl": "https://cdn-icons-png.flaticon.com/512/2917/2917242.png",
+        "isVertical": true,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "SUMMER",
+    "solution": "The sun icon represents summer.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["vocabulary", "seasons"],
+      "targetComplexityBand": "low",
+      "inputMode": "letter_bank",
+      "misconceptionCode": "season_identification_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 19,
+    "marks": 1,
+    "sort_order": 10,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Complete: 24 + 8 =",
+        "isVertical": true,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_1",
+        "type": "input",
+        "content": "",
+        "isVertical": false,
+        "hasAudio": false,
+        "expectedType": "number"
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_1\":\"32\"}",
+    "solution": "24 + 8 = 32.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["addition", "place_value", "carry_over"],
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "misconceptionCode": "place_value_shift",
+      "misconceptionTags": ["regrouping_error"],
+      "isRemediation": true,
+      "remediationFor": ["add_no_carry", "place_value_shift"],
+      "remediationLevel": 1
+    }
+  }
+]

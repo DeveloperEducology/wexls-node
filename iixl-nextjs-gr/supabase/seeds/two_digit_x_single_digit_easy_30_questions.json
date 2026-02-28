@@ -1,0 +1,1532 @@
+[
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 1,
+    "marks": 1,
+    "sort_order": 1,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q1",
+        "type": "text",
+        "content": "Multiply: 12 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_1",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_1\":\"12\"}",
+    "solution": "12 × 1 = 12.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 2,
+    "marks": 1,
+    "sort_order": 2,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q2",
+        "type": "text",
+        "content": "Multiply: 13 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_2",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_2\":\"26\"}",
+    "solution": "13 × 2 = 26.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 3,
+    "marks": 1,
+    "sort_order": 3,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q3",
+        "type": "text",
+        "content": "Multiply: 14 × 3 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_3",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_3\":\"42\"}",
+    "solution": "14 × 3 = 42.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 4,
+    "marks": 1,
+    "sort_order": 4,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q4",
+        "type": "text",
+        "content": "Multiply: 15 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_4",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_4\":\"15\"}",
+    "solution": "15 × 1 = 15.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 5,
+    "marks": 1,
+    "sort_order": 5,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q5",
+        "type": "text",
+        "content": "Multiply: 16 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_5",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_5\":\"32\"}",
+    "solution": "16 × 2 = 32.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 6,
+    "marks": 1,
+    "sort_order": 6,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q6",
+        "type": "text",
+        "content": "Multiply: 17 × 3 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_6",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_6\":\"51\"}",
+    "solution": "17 × 3 = 51.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 7,
+    "marks": 1,
+    "sort_order": 7,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q7",
+        "type": "text",
+        "content": "Multiply: 18 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_7",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_7\":\"18\"}",
+    "solution": "18 × 1 = 18.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 8,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q8",
+        "type": "text",
+        "content": "Multiply: 19 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_8",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_8\":\"38\"}",
+    "solution": "19 × 2 = 38.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 9,
+    "marks": 1,
+    "sort_order": 9,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q9",
+        "type": "text",
+        "content": "Multiply: 20 × 3 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_9",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_9\":\"60\"}",
+    "solution": "20 × 3 = 60.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 10,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q10",
+        "type": "text",
+        "content": "Multiply: 21 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_10",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_10\":\"21\"}",
+    "solution": "21 × 1 = 21.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 11,
+    "marks": 1,
+    "sort_order": 11,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q11",
+        "type": "text",
+        "content": "Multiply: 22 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_11",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_11\":\"44\"}",
+    "solution": "22 × 2 = 44.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 12,
+    "marks": 1,
+    "sort_order": 12,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q12",
+        "type": "text",
+        "content": "Multiply: 23 × 3 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_12",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_12\":\"69\"}",
+    "solution": "23 × 3 = 69.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 13,
+    "marks": 1,
+    "sort_order": 13,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q13",
+        "type": "text",
+        "content": "Multiply: 24 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_13",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_13\":\"24\"}",
+    "solution": "24 × 1 = 24.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 14,
+    "marks": 1,
+    "sort_order": 14,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q14",
+        "type": "text",
+        "content": "Multiply: 25 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_14",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_14\":\"50\"}",
+    "solution": "25 × 2 = 50.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 15,
+    "marks": 1,
+    "sort_order": 15,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q15",
+        "type": "text",
+        "content": "Multiply: 26 × 3 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_15",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_15\":\"78\"}",
+    "solution": "26 × 3 = 78.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 16,
+    "marks": 1,
+    "sort_order": 16,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q16",
+        "type": "text",
+        "content": "Multiply: 27 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_16",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_16\":\"27\"}",
+    "solution": "27 × 1 = 27.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 17,
+    "marks": 1,
+    "sort_order": 17,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q17",
+        "type": "text",
+        "content": "Multiply: 28 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_17",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_17\":\"56\"}",
+    "solution": "28 × 2 = 56.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 18,
+    "marks": 1,
+    "sort_order": 18,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q18",
+        "type": "text",
+        "content": "Multiply: 29 × 3 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_18",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_18\":\"87\"}",
+    "solution": "29 × 3 = 87.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 19,
+    "marks": 1,
+    "sort_order": 19,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q19",
+        "type": "text",
+        "content": "Multiply: 30 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_19",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_19\":\"30\"}",
+    "solution": "30 × 1 = 30.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 20,
+    "marks": 1,
+    "sort_order": 20,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q20",
+        "type": "text",
+        "content": "Multiply: 31 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_20",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_20\":\"62\"}",
+    "solution": "31 × 2 = 62.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 21,
+    "marks": 1,
+    "sort_order": 21,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q21",
+        "type": "text",
+        "content": "Multiply: 32 × 3 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_21",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_21\":\"96\"}",
+    "solution": "32 × 3 = 96.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 22,
+    "marks": 1,
+    "sort_order": 22,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q22",
+        "type": "text",
+        "content": "Multiply: 33 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_22",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_22\":\"33\"}",
+    "solution": "33 × 1 = 33.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 23,
+    "marks": 1,
+    "sort_order": 23,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q23",
+        "type": "text",
+        "content": "Multiply: 34 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_23",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_23\":\"68\"}",
+    "solution": "34 × 2 = 68.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 24,
+    "marks": 1,
+    "sort_order": 24,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q24",
+        "type": "text",
+        "content": "Multiply: 35 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_24",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_24\":\"35\"}",
+    "solution": "35 × 1 = 35.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 25,
+    "marks": 1,
+    "sort_order": 25,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q25",
+        "type": "text",
+        "content": "Multiply: 36 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_25",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_25\":\"72\"}",
+    "solution": "36 × 2 = 72.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 26,
+    "marks": 1,
+    "sort_order": 26,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q26",
+        "type": "text",
+        "content": "Multiply: 37 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_26",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_26\":\"37\"}",
+    "solution": "37 × 1 = 37.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 27,
+    "marks": 1,
+    "sort_order": 27,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q27",
+        "type": "text",
+        "content": "Multiply: 38 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_27",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_27\":\"76\"}",
+    "solution": "38 × 2 = 76.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 28,
+    "marks": 1,
+    "sort_order": 28,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q28",
+        "type": "text",
+        "content": "Multiply: 39 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_28",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_28\":\"39\"}",
+    "solution": "39 × 1 = 39.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 29,
+    "marks": 1,
+    "sort_order": 29,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q29",
+        "type": "text",
+        "content": "Multiply: 40 × 2 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_29",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_29\":\"80\"}",
+    "solution": "40 × 2 = 80.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 30,
+    "marks": 1,
+    "sort_order": 30,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "q30",
+        "type": "text",
+        "content": "Multiply: 41 × 1 =",
+        "isVertical": false,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_30",
+        "type": "input",
+        "placeholder": "__",
+        "width": "96px",
+        "maxLength": 3,
+        "answerType": "number",
+        "isVertical": false,
+        "hasAudio": false
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_30\":\"41\"}",
+    "solution": "41 × 1 = 41.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": [
+        "multiplication",
+        "single_digit_multiplier",
+        "facts_1_to_3"
+      ],
+      "misconceptionCode": "basic_multiplication_fact_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  }
+]

@@ -18,6 +18,8 @@
     padding: 0.6rem 0.75rem;
     margin-bottom: 0.5rem;
     box-shadow: 0 6px 14px rgba(14, 73, 116, 0.08);
+    flex-wrap: wrap;
+    gap: 0.4rem 0.7rem;
 }
 
 .mobileProgressLeft,
@@ -26,6 +28,7 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    min-width: 0;
 }
 
 .mobileProgressCenter {
@@ -35,6 +38,7 @@
 
 .mobileProgressRight {
     justify-content: flex-end;
+    margin-left: auto;
 }
 
 .mobileProgressItem {
@@ -251,6 +255,11 @@
     margin-top: 0.1rem;
 }
 
+.inlineWorkPadWrap {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
 .workItOutButton {
     background: transparent;
     border: none;
@@ -413,6 +422,122 @@
     box-shadow: inset 0 0 0 2px #ffd0d2;
 }
 
+.incorrectDetailed {
+    display: block;
+    padding: 1.1rem 1.2rem;
+}
+
+.incorrectTitle {
+    margin: 0 0 0.75rem;
+    color: #16a3dc;
+    font-size: 2.1rem;
+    line-height: 1.05;
+    font-family: var(--font-display), var(--font-body), sans-serif;
+}
+
+.correctAnswerRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+}
+
+.correctAnswerLabel {
+    color: #5f8f03;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.correctAnswerValue {
+    color: #16293c;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.explanationHeading {
+    margin: 0.25rem 0 0.45rem;
+    color: #6a9d00;
+    font-size: 1.9rem;
+    line-height: 1.1;
+    font-family: var(--font-display), var(--font-body), sans-serif;
+}
+
+.reviewCard {
+    border: 1px solid #d7dff5;
+    border-radius: 10px;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    background: #fcfdff;
+}
+
+.reviewTitle {
+    margin: 0 0 0.5rem;
+    color: #39536b;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.reviewQuestion {
+    margin-bottom: 0.6rem;
+}
+
+.reviewOptions {
+    display: grid;
+    gap: 0.42rem;
+}
+
+.reviewOption {
+    border: 1px solid #d9e2eb;
+    border-radius: 8px;
+    padding: 0.45rem 0.55rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.reviewOptionLabel {
+    font-size: 0.83rem;
+    color: #2d4358;
+    font-weight: 600;
+}
+
+.reviewSelected {
+    border-color: #e0b852;
+    background: #fff8e5;
+}
+
+.reviewCorrect {
+    border-color: #8fd3a8;
+    background: #eefaf2;
+}
+
+.reviewTag,
+.reviewTagCorrect {
+    font-size: 0.68rem;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 0.15rem 0.45rem;
+}
+
+.reviewTag {
+    color: #8a5d00;
+    background: #ffe9a9;
+}
+
+.reviewTagCorrect {
+    color: #0f7a3d;
+    background: #d9f7e5;
+}
+
+.reviewAnswerLine {
+    margin: 0;
+    color: #2f4860;
+    font-size: 0.83rem;
+}
+
 .feedbackIcon {
     font-size: 1.4rem;
     font-weight: 800;
@@ -444,6 +569,118 @@
     color: #4a637c;
     font-size: 0.82rem;
     line-height: 1.45;
+}
+
+.solutionSections {
+    display: grid;
+    gap: 0.7rem;
+    margin-bottom: 0.9rem;
+}
+
+.explanationSection {
+    position: relative;
+    border: 1px solid #d7dff5;
+    border-radius: 8px;
+    background: #fcfdff;
+    padding: 0.75rem 0.75rem 0.75rem 2.1rem;
+}
+
+.explanationSectionBody {
+    min-height: 60px;
+}
+
+.explanationSectionTitle {
+    margin: 0 0 0.45rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1f2f46;
+}
+
+.explanationRibbon {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 26px;
+    padding: 0.45rem 0.2rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: lowercase;
+    border-radius: 0 0 4px 0;
+}
+
+.ribbonReview {
+    background: #98c93b;
+}
+
+.ribbonSolve {
+    background: #f59e0b;
+}
+
+.scoreDebugCard {
+    border: 1px solid #d8e9f7;
+    background: #f8fcff;
+    border-radius: 10px;
+    padding: 0.55rem 0.65rem;
+    margin-bottom: 0.7rem;
+}
+
+.adaptiveDebugCard {
+    border: 1px solid #d4e8f7;
+    background: #f2f9ff;
+    border-radius: 10px;
+    padding: 0.55rem 0.65rem;
+    margin-bottom: 0.7rem;
+}
+
+.adaptiveDebugTitle {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #1f5f87;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.2rem;
+}
+
+.adaptiveDebugGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.2rem 0.6rem;
+}
+
+.adaptiveDebugGrid span {
+    font-size: 0.72rem;
+    color: #3f607a;
+}
+
+.scoreDebugTitle {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #2c5878;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.2rem;
+}
+
+.scoreDebugDelta {
+    font-size: 0.78rem;
+    color: #274a65;
+    margin-bottom: 0.25rem;
+}
+
+.scoreDebugGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.2rem 0.6rem;
+}
+
+.scoreDebugGrid span {
+    font-size: 0.72rem;
+    color: #4b6680;
 }
 
 .nextLoader {
@@ -490,6 +727,36 @@
     bottom: 1.15rem;
     font-size: 1.9rem;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 55;
+}
+
+.loadingScreen {
+    min-height: 72vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.loadingBrand {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(15, 110, 168, 0.2));
+}
+
+.loadingSpinner {
+    width: 52px;
+    height: 52px;
+    border: 5px solid #c8e6f8;
+    border-top-color: #0f8cd1;
+    border-radius: 50%;
+    animation: loadingSpin 0.8s linear infinite;
 }
 
 .completionCard {
@@ -566,6 +833,12 @@
     }
 }
 
+@keyframes loadingSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @media (max-width: 1024px) {
     .layout {
         grid-template-columns: 1fr;
@@ -611,6 +884,27 @@
         flex-direction: column;
     }
 
+    .explanationSection {
+        padding-left: 1.85rem;
+    }
+
+    .explanationRibbon {
+        width: 22px;
+        font-size: 0.72rem;
+    }
+
+    .incorrectTitle {
+        font-size: 1.55rem;
+    }
+
+    .explanationHeading {
+        font-size: 1.4rem;
+    }
+
+    .reviewOptionLabel {
+        font-size: 0.78rem;
+    }
+
     .breadcrumb {
         font-size: 0.7rem;
     }
@@ -618,10 +912,35 @@
     .mobileSkillName {
         max-width: 120px;
     }
+
+    .mobileProgress {
+        padding: 0.52rem 0.62rem;
+    }
+
+    .mobileProgressLeft,
+    .mobileProgressRight {
+        gap: 0.5rem;
+    }
+
+    .mobileProgressValue {
+        font-size: 0.86rem;
+    }
+
+    .scoreDebugGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .adaptiveDebugGrid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 360px) {
     .mobileProgressCenter {
         display: none;
+    }
+
+    .mobileProgress {
+        justify-content: space-between;
     }
 }

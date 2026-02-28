@@ -1,0 +1,1050 @@
+[
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 6,
+    "marks": 1,
+    "sort_order": 1,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q1", "type": "text", "content": "Which odd number comes right after 82?", "isVertical": true, "hasAudio": true },
+      { "id": "a1", "type": "input", "placeholder": "__", "width": "96px", "maxLength": 2, "answerType": "number", "isVertical": true }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a1\":\"83\"}",
+    "solution": "After 82 comes 83.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["odd_even", "successor"],
+      "misconceptionCode": "odd_after_even_confusion",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 6,
+    "marks": 1,
+    "sort_order": 2,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q2", "type": "text", "content": "Which odd number comes before 45?", "isVertical": true, "hasAudio": true },
+      { "id": "a2", "type": "input", "placeholder": "__", "width": "96px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t2", "type": "text", "content": ", 45, 47, 49", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a2\":\"43\"}",
+    "solution": "Odd numbers change by 2. Before 45 is 43.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["odd_even", "predecessor"],
+      "misconceptionCode": "subtract_2_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 7,
+    "marks": 1,
+    "sort_order": 3,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q3", "type": "text", "content": "Fill the missing even number:", "isVertical": true, "hasAudio": true },
+      { "id": "t3", "type": "text", "content": "20, ", "isVertical": false },
+      { "id": "a3", "type": "input", "placeholder": "?", "width": "70px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t3b", "type": "text", "content": ", 24, 26", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a3\":\"22\"}",
+    "solution": "Even numbers increase by 2.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["odd_even", "sequence"],
+      "misconceptionCode": "adds_1_instead_of_2",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 7,
+    "marks": 1,
+    "sort_order": 4,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q4", "type": "text", "content": "Write the next odd number:", "isVertical": true, "hasAudio": true },
+      { "id": "t4", "type": "text", "content": "31, 33, 35, ", "isVertical": false },
+      { "id": "a4", "type": "input", "placeholder": "next", "width": "80px", "maxLength": 2, "answerType": "number", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a4\":\"37\"}",
+    "solution": "Odd numbers go 31, 33, 35, 37.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["odd_even", "successor"],
+      "misconceptionCode": "odd_pattern_step_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 5,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q5", "type": "text", "content": "Write the even number just before 60.", "isVertical": true, "hasAudio": true },
+      { "id": "a5", "type": "input", "placeholder": "__", "width": "90px", "maxLength": 2, "answerType": "number", "isVertical": true }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a5\":\"58\"}",
+    "solution": "Before 60, the previous even number is 58.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["even_numbers", "predecessor"],
+      "misconceptionCode": "even_predecessor_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 6,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q6", "type": "text", "content": "Fill both blanks:", "isVertical": true, "hasAudio": true },
+      { "id": "a6_1", "type": "input", "placeholder": "A", "width": "66px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t6", "type": "text", "content": ", 69, 71, ", "isVertical": false },
+      { "id": "a6_2", "type": "input", "placeholder": "B", "width": "66px", "maxLength": 2, "answerType": "number", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a6_1\":\"67\",\"a6_2\":\"73\"}",
+    "solution": "Odd sequence with +2 gives 67, 69, 71, 73.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["odd_numbers", "multi_blank"],
+      "misconceptionCode": "multi_blank_alignment_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 7,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q7", "type": "text", "content": "Blank at beginning:", "isVertical": true, "hasAudio": true },
+      { "id": "a7", "type": "input", "placeholder": "start", "width": "80px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t7", "type": "text", "content": ", 14, 16, 18", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a7\":\"12\"}",
+    "solution": "Even numbers increase by 2.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["even_numbers", "sequence_start"],
+      "misconceptionCode": "sequence_start_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 9,
+    "marks": 1,
+    "sort_order": 8,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q8", "type": "text", "content": "Blank at end:", "isVertical": true, "hasAudio": true },
+      { "id": "t8", "type": "text", "content": "90, 92, 94, ", "isVertical": false },
+      { "id": "a8", "type": "input", "placeholder": "end", "width": "80px", "maxLength": 2, "answerType": "number", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a8\":\"96\"}",
+    "solution": "Continue +2 pattern to 96.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["even_numbers", "sequence_end"],
+      "misconceptionCode": "sequence_end_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 9,
+    "marks": 1,
+    "sort_order": 9,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q9", "type": "text", "content": "The odd number after 99 is", "isVertical": true, "hasAudio": true },
+      { "id": "a9", "type": "input", "placeholder": "__", "width": "84px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t9", "type": "text", "content": ".", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a9\":\"101\"}",
+    "solution": "After 99, the next odd number is 101.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["odd_numbers", "cross_hundred"],
+      "misconceptionCode": "carry_to_next_hundred_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 10,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q10", "type": "text", "content": "Find both missing numbers:", "isVertical": true, "hasAudio": true },
+      { "id": "a10_1", "type": "input", "placeholder": "A", "width": "64px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t10", "type": "text", "content": ", 51, 53, ", "isVertical": false },
+      { "id": "a10_2", "type": "input", "placeholder": "B", "width": "64px", "maxLength": 2, "answerType": "number", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a10_1\":\"49\",\"a10_2\":\"55\"}",
+    "solution": "Odd numbers around 51, 53 are 49 and 55.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["odd_numbers", "multi_blank"],
+      "misconceptionCode": "odd_multi_step_error",
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 11,
+    "marks": 1,
+    "sort_order": 11,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q11", "type": "text", "content": "Complete the pattern (odd numbers):", "isVertical": true, "hasAudio": true },
+      { "id": "t11", "type": "text", "content": "101, 103, ", "isVertical": false },
+      { "id": "a11", "type": "input", "placeholder": "?", "width": "78px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t11b", "type": "text", "content": ", 107", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a11\":\"105\"}",
+    "solution": "Add 2 each step.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["odd_numbers", "three_digit_sequence"],
+      "misconceptionCode": "three_digit_step_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 11,
+    "marks": 1,
+    "sort_order": 12,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q12", "type": "text", "content": "What even number comes right before 124?", "isVertical": true, "hasAudio": true },
+      { "id": "a12", "type": "input", "placeholder": "__", "width": "84px", "maxLength": 3, "answerType": "number", "isVertical": true }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a12\":\"122\"}",
+    "solution": "Previous even number is 122.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["even_numbers", "predecessor", "three_digit_sequence"],
+      "misconceptionCode": "three_digit_predecessor_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 12,
+    "marks": 1,
+    "sort_order": 13,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q13", "type": "text", "content": "Fill middle blank:", "isVertical": true, "hasAudio": true },
+      { "id": "t13", "type": "text", "content": "138, ", "isVertical": false },
+      { "id": "a13", "type": "input", "placeholder": "middle", "width": "82px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t13b", "type": "text", "content": ", 142", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a13\":\"140\"}",
+    "solution": "Even sequence: 138, 140, 142.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["even_numbers", "middle_blank"],
+      "misconceptionCode": "middle_blank_place_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 12,
+    "marks": 1,
+    "sort_order": 14,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q14", "type": "text", "content": "Two blanks, descending by 2:", "isVertical": true, "hasAudio": true },
+      { "id": "t14", "type": "text", "content": "97, ", "isVertical": false },
+      { "id": "a14_1", "type": "input", "placeholder": "A", "width": "64px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t14b", "type": "text", "content": ", 93, ", "isVertical": false },
+      { "id": "a14_2", "type": "input", "placeholder": "B", "width": "64px", "maxLength": 2, "answerType": "number", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a14_1\":\"95\",\"a14_2\":\"91\"}",
+    "solution": "Sequence goes down by 2.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["odd_numbers", "descending"],
+      "misconceptionCode": "direction_confusion_descending",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 13,
+    "marks": 1,
+    "sort_order": 15,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q15", "type": "text", "content": "What odd number is between 209 and 213?", "isVertical": true, "hasAudio": true },
+      { "id": "a15", "type": "input", "placeholder": "__", "width": "88px", "maxLength": 3, "answerType": "number", "isVertical": true }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a15\":\"211\"}",
+    "solution": "209, 211, 213 are consecutive odd numbers.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["odd_numbers", "between_numbers"],
+      "misconceptionCode": "between_number_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 13,
+    "marks": 1,
+    "sort_order": 16,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q16", "type": "text", "content": "Fill: __, 302, 304, 306", "isVertical": true, "hasAudio": true },
+      { "id": "a16", "type": "input", "placeholder": "start", "width": "84px", "maxLength": 3, "answerType": "number", "isVertical": true }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a16\":\"300\"}",
+    "solution": "Even numbers: 300, 302, 304, 306.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["even_numbers", "three_digit_sequence"],
+      "misconceptionCode": "hundreds_place_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 14,
+    "marks": 1,
+    "sort_order": 17,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q17", "type": "text", "content": "Complete the odd sequence:", "isVertical": true, "hasAudio": true },
+      { "id": "t17", "type": "text", "content": "401, 403, 405, ", "isVertical": false },
+      { "id": "a17", "type": "input", "placeholder": "next", "width": "84px", "maxLength": 3, "answerType": "number", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a17\":\"407\"}",
+    "solution": "Add 2 to continue odd numbers.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["odd_numbers", "three_digit_sequence"],
+      "misconceptionCode": "three_digit_odd_step_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 14,
+    "marks": 1,
+    "sort_order": 18,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q18", "type": "text", "content": "Put the missing even number:", "isVertical": true, "hasAudio": true },
+      { "id": "t18", "type": "text", "content": "506, ", "isVertical": false },
+      { "id": "a18", "type": "input", "placeholder": "?", "width": "80px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t18b", "type": "text", "content": ", 510", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a18\":\"508\"}",
+    "solution": "Even sequence in steps of 2.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["even_numbers", "middle_blank"],
+      "misconceptionCode": "middle_even_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 15,
+    "marks": 1,
+    "sort_order": 19,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q19", "type": "text", "content": "Three blanks, odd numbers:", "isVertical": true, "hasAudio": true },
+      { "id": "a19_1", "type": "input", "placeholder": "A", "width": "58px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t19", "type": "text", "content": ", 33, ", "isVertical": false },
+      { "id": "a19_2", "type": "input", "placeholder": "B", "width": "58px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t19b", "type": "text", "content": ", 37, ", "isVertical": false },
+      { "id": "a19_3", "type": "input", "placeholder": "C", "width": "58px", "maxLength": 2, "answerType": "number", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a19_1\":\"31\",\"a19_2\":\"35\",\"a19_3\":\"39\"}",
+    "solution": "31, 33, 35, 37, 39 are odd numbers.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["odd_numbers", "multi_blank", "pattern"],
+      "misconceptionCode": "multi_blank_sequence_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 15,
+    "marks": 1,
+    "sort_order": 20,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q20", "type": "text", "content": "Find the missing even predecessor:", "isVertical": true, "hasAudio": true },
+      { "id": "a20", "type": "input", "placeholder": "__", "width": "84px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t20", "type": "text", "content": ", 702", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a20\":\"700\"}",
+    "solution": "Before 702 in even numbers is 700.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["even_numbers", "predecessor", "hundreds"],
+      "misconceptionCode": "hundreds_predecessor_error",
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 7,
+    "marks": 1,
+    "sort_order": 21,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q21", "type": "text", "content": "Recovery: even numbers go by 2. Fill blank:", "isVertical": true, "hasAudio": true },
+      { "id": "t21", "type": "text", "content": "40, ", "isVertical": false },
+      { "id": "a21", "type": "input", "placeholder": "?", "width": "70px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t21b", "type": "text", "content": ", 44", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a21\":\"42\"}",
+    "solution": "40, 42, 44.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["even_numbers", "remediation"],
+      "misconceptionCode": "adds_1_instead_of_2",
+      "remediationFor": ["adds_1_instead_of_2", "middle_even_error"],
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 7,
+    "marks": 1,
+    "sort_order": 22,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q22", "type": "text", "content": "Recovery: odd numbers go by 2. Fill blank:", "isVertical": true, "hasAudio": true },
+      { "id": "t22", "type": "text", "content": "51, ", "isVertical": false },
+      { "id": "a22", "type": "input", "placeholder": "?", "width": "70px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t22b", "type": "text", "content": ", 55", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a22\":\"53\"}",
+    "solution": "51, 53, 55.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["odd_numbers", "remediation"],
+      "misconceptionCode": "odd_pattern_step_error",
+      "remediationFor": ["odd_pattern_step_error", "odd_after_even_confusion"],
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 23,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q23", "type": "text", "content": "Recovery (direction): 73, 71,", "isVertical": true, "hasAudio": true },
+      { "id": "a23", "type": "input", "placeholder": "next", "width": "76px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t23", "type": "text", "content": ", 67", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a23\":\"69\"}",
+    "solution": "Descending odd numbers go down by 2.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["odd_numbers", "descending", "remediation"],
+      "misconceptionCode": "direction_confusion_descending",
+      "remediationFor": ["direction_confusion_descending"],
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 24,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q24", "type": "text", "content": "Recovery across hundred: 98,", "isVertical": true, "hasAudio": true },
+      { "id": "a24", "type": "input", "placeholder": "next", "width": "78px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t24", "type": "text", "content": ", 102", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a24\":\"100\"}",
+    "solution": "Even sequence crossing 100: 98, 100, 102.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["even_numbers", "cross_hundred", "remediation"],
+      "misconceptionCode": "carry_to_next_hundred_error",
+      "remediationFor": ["carry_to_next_hundred_error", "hundreds_place_error"],
+      "targetComplexityBand": "low",
+      "inputMode": "digit_pad",
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 25,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q25", "type": "text", "content": "Recovery multi-blank:", "isVertical": true, "hasAudio": true },
+      { "id": "a25_1", "type": "input", "placeholder": "A", "width": "56px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t25", "type": "text", "content": ", 28, ", "isVertical": false },
+      { "id": "a25_2", "type": "input", "placeholder": "B", "width": "56px", "maxLength": 2, "answerType": "number", "isVertical": false },
+      { "id": "t25b", "type": "text", "content": ", 32", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a25_1\":\"26\",\"a25_2\":\"30\"}",
+    "solution": "Even numbers: 26, 28, 30, 32.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["even_numbers", "multi_blank", "remediation"],
+      "misconceptionCode": "multi_blank_alignment_error",
+      "remediationFor": ["multi_blank_alignment_error", "middle_blank_place_error"],
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": true,
+      "remediationLevel": 2
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 26,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q26", "type": "text", "content": "Recovery challenge:", "isVertical": true, "hasAudio": true },
+      { "id": "t26", "type": "text", "content": "115, ", "isVertical": false },
+      { "id": "a26", "type": "input", "placeholder": "?", "width": "72px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t26b", "type": "text", "content": ", 119", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a26\":\"117\"}",
+    "solution": "Odd numbers in order: 115, 117, 119.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["odd_numbers", "three_digit_sequence", "remediation"],
+      "misconceptionCode": "three_digit_odd_step_error",
+      "remediationFor": ["three_digit_odd_step_error", "between_number_error"],
+      "targetComplexityBand": "mid",
+      "inputMode": "digit_pad",
+      "isRemediation": true,
+      "remediationLevel": 2
+    }
+  },
+
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "hard",
+    "complexity": 16,
+    "marks": 1,
+    "sort_order": 27,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q27", "type": "text", "content": "Challenge: fill all blanks", "isVertical": true, "hasAudio": true },
+      { "id": "t27", "type": "text", "content": "801, ", "isVertical": false },
+      { "id": "a27_1", "type": "input", "placeholder": "A", "width": "60px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t27b", "type": "text", "content": ", 805, ", "isVertical": false },
+      { "id": "a27_2", "type": "input", "placeholder": "B", "width": "60px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t27c", "type": "text", "content": ", 809", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a27_1\":\"803\",\"a27_2\":\"807\"}",
+    "solution": "Odd numbers increase by 2.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": ["odd_numbers", "multi_blank", "mastery_check"],
+      "misconceptionCode": "challenge_multi_blank_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "hard",
+    "complexity": 16,
+    "marks": 1,
+    "sort_order": 28,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q28", "type": "text", "content": "Challenge descending evens:", "isVertical": true, "hasAudio": true },
+      { "id": "t28", "type": "text", "content": "1000, 998, ", "isVertical": false },
+      { "id": "a28", "type": "input", "placeholder": "?", "width": "74px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t28b", "type": "text", "content": ", 994", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a28\":\"996\"}",
+    "solution": "Descending even numbers: 1000, 998, 996, 994.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": ["even_numbers", "descending", "thousands"],
+      "misconceptionCode": "challenge_direction_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "hard",
+    "complexity": 17,
+    "marks": 1,
+    "sort_order": 29,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q29", "type": "text", "content": "Find all odd blanks:", "isVertical": true, "hasAudio": true },
+      { "id": "a29_1", "type": "input", "placeholder": "A", "width": "58px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t29", "type": "text", "content": ", 903, 905, ", "isVertical": false },
+      { "id": "a29_2", "type": "input", "placeholder": "B", "width": "58px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t29b", "type": "text", "content": ", 909, ", "isVertical": false },
+      { "id": "a29_3", "type": "input", "placeholder": "C", "width": "58px", "maxLength": 3, "answerType": "number", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a29_1\":\"901\",\"a29_2\":\"907\",\"a29_3\":\"911\"}",
+    "solution": "Odd numbers increasing by 2.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": ["odd_numbers", "multi_blank", "high_range"],
+      "misconceptionCode": "high_range_pattern_error",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "hard",
+    "complexity": 18,
+    "marks": 1,
+    "sort_order": 30,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q30", "type": "text", "content": "Final mastery check:", "isVertical": true, "hasAudio": true },
+      { "id": "t30", "type": "text", "content": "997, ", "isVertical": false },
+      { "id": "a30", "type": "input", "placeholder": "final", "width": "72px", "maxLength": 3, "answerType": "number", "isVertical": false },
+      { "id": "t30b", "type": "text", "content": ", 1001", "isVertical": false }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"a30\":\"999\"}",
+    "solution": "Odd sequence around 1000 is 997, 999, 1001.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": ["odd_numbers", "mastery_check", "cross_thousand"],
+      "misconceptionCode": "final_mastery_gap",
+      "targetComplexityBand": "high",
+      "inputMode": "digit_pad",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  }
+]

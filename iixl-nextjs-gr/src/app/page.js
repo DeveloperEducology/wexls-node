@@ -1,7 +1,9 @@
 import Hero from '@/components/Hero';
 import GradeCard from '@/components/GradeCard';
+import HomeAuthStatus from '@/components/HomeAuthStatus';
 import styles from './page.module.css';
 import { getHomeGradesData } from '@/lib/curriculum/server';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Home',
@@ -19,15 +21,15 @@ export default async function Home() {
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.logo}>
-            <span className={styles.logoText}>IXL</span>
+            <span className={styles.logoText}>WEXLS</span>
           </div>
           <nav className={styles.nav}>
             <a href="#" className={styles.navLink}>Learning</a>
             <a href="#" className={styles.navLink}>Analytics</a>
+            <Link href="/admin" className={styles.navLink}>Admin</Link>
           </nav>
           <div className={styles.authButtons}>
-            <button className={styles.signInBtn}>Sign in</button>
-            <button className={styles.joinBtn}>Join now</button>
+            <HomeAuthStatus />
           </div>
         </div>
       </header>
@@ -58,7 +60,7 @@ export default async function Home() {
 
       <footer className={styles.footer}>
         <div className={styles.container}>
-          <p>© 2026 IXL Learning. All rights reserved.</p>
+          <p>© 2026 WEXLS Learning. All rights reserved.</p>
         </div>
       </footer>
     </main>

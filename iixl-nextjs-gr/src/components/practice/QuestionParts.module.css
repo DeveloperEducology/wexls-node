@@ -1,8 +1,23 @@
 .container {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    flex-wrap: wrap;
     align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.partWrapper {
+    display: inline-flex;
+    align-items: flex-start;
+}
+
+.inlinePart {
+    width: auto;
+    max-width: 100%;
+}
+
+.verticalPart {
+    width: 100%;
+    display: flex;
 }
 
 .text {
@@ -11,38 +26,57 @@
     color: var(--text-primary);
 }
 
+.textRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+}
+
+.text code {
+    background: #e2e8f0;
+    border-radius: 4px;
+    padding: 0.08rem 0.35rem;
+    font-size: 0.9em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 .imageContainer {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.6rem;
     margin: 0.5rem 0;
 }
 
 .image {
     border-radius: var(--border-radius-sm);
     object-fit: contain;
-    max-width: 220px;
-    height: auto;
+    max-width: min(100%, 320px);
+    height: 150px !important;
+    width: auto !important;
 }
 
 .urlImage {
     border-radius: var(--border-radius-sm);
     object-fit: contain;
-    max-width: 220px;
-    max-height: 220px;
-    width: auto;
-    height: auto;
+    max-width: min(100%, 320px);
+    height: 150px !important;
+    width: auto !important;
 }
 
 .svgContainer {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.6rem;
     margin: 1rem 0;
 }
 
 .svgContainer svg {
-    max-width: 100%;
+    max-width: min(100%, 320px);
+    max-height: 240px;
     height: auto;
 }
 
@@ -61,12 +95,196 @@
     color: #3b82f6;
 }
 
+.mathLatex {
+    font-size: 1.18rem;
+    line-height: 1.45;
+    color: #111827;
+    font-weight: 600;
+}
+
+.mathLatex :global(.katex .mord),
+.mathLatex :global(.katex .mbin),
+.mathLatex :global(.katex .mrel) {
+    margin-right: 0.14em;
+}
+
+.mathLatexDisplay {
+    width: 100%;
+}
+
+.longMultiply {
+    font-family: "Nunito", "Baloo 2", "Segoe UI", sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 150px;
+    margin: 0.2rem 0;
+}
+
+.longMultiplyGrid {
+    font-family: "Nunito", "Baloo 2", "Segoe UI", sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0.2rem 0;
+    --long-cell: 26px;
+    --long-op: 22px;
+}
+
+.longCarryRow,
+.longMathRow,
+.longDividerRow {
+    display: grid;
+    grid-template-columns: var(--long-op) repeat(var(--long-cols, 1), var(--long-cell));
+    align-items: center;
+    justify-items: center;
+}
+
+.longCarryRow {
+    min-height: 14px;
+}
+
+.longCell {
+    width: var(--long-cell);
+    text-align: center;
+    line-height: 1;
+    color: #172136;
+}
+
+.longCarryRow .longCell {
+    font-size: 0.94rem;
+    font-weight: 700;
+    color: #16a34a;
+    min-height: 14px;
+}
+
+.longMathRow .longCell {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.longOpCell {
+    width: var(--long-op);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #172136;
+}
+
+.longDividerRow {
+    justify-items: stretch;
+    margin: 0.08rem 0 0.12rem;
+}
+
+.longDividerRow .longDivider {
+    grid-column: 2 / -1;
+    border-top: 2px solid #172136;
+    width: 100%;
+    margin: 0;
+}
+
+.longCarry {
+    width: 100%;
+    text-align: right;
+    color: #16a34a;
+    font-size: 0.95rem;
+    font-weight: 700;
+    min-height: 1rem;
+    line-height: 1;
+}
+
+.longRow {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #172136;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.45rem;
+}
+
+.longOperator {
+    margin-right: 0.15rem;
+}
+
+.longDivider {
+    width: 100%;
+    border-top: 2px solid #172136;
+    margin: 0.2rem 0 0.18rem;
+}
+
+.longAnswer {
+    font-size: 2.05rem;
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: 0.02em;
+}
+
+.longBoxes {
+    display: inline-flex;
+    align-items: center;
+}
+
+.longBox {
+    width: 24px;
+    height: 28px;
+    border: 1px dashed #4ba8ff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #172136;
+}
+
 @media (max-width: 768px) {
     .text {
         font-size: 0.96rem;
     }
 
+    .image,
+    .urlImage {
+        max-width: min(100%, 220px);
+    }
+
+    .image,
+    .urlImage {
+        height: 80px !important;
+    }
+
+    .svgContainer svg {
+        max-width: min(100%, 220px);
+        max-height: 160px;
+    }
+
     .sequence {
         gap: 0.5rem;
+    }
+
+    .longRow {
+        font-size: 1.6rem;
+    }
+
+    .longMultiplyGrid {
+        --long-cell: 22px;
+        --long-op: 18px;
+    }
+
+    .longMathRow .longCell,
+    .longOpCell {
+        font-size: 1.55rem;
+    }
+
+    .longAnswer {
+        font-size: 1.7rem;
+    }
+
+    .longBox {
+        width: 20px;
+        height: 24px;
+        font-size: 1.05rem;
     }
 }

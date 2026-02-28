@@ -2,7 +2,8 @@
 
 import QuestionParts from './QuestionParts';
 import styles from './ImageChoiceRenderer.module.css';
-import { getImageSrc, isImageUrl, isInlineSvg } from './contentUtils';
+import { getImageSrc, hasInlineHtml, isImageUrl, isInlineSvg, sanitizeInlineHtml } from './contentUtils';
+import SafeImage from './SafeImage';
 
 export default function ImageChoiceRenderer({
     question,
@@ -74,16 +75,25 @@ export default function ImageChoiceRenderer({
                                             dangerouslySetInnerHTML={{ __html: inlineSvgMarkup }}
                                         />
                                     ) : isImageUrl(src) ? (
-                                        <img
+                                        <SafeImage
                                             src={src}
                                             alt={`Option ${index + 1}`}
                                             className={styles.optionImage}
-                                            loading="lazy"
+                                            width={220}
+                                            height={140}
+                                            sizes="(max-width: 768px) 44vw, 220px"
                                         />
                                     ) : !src ? (
                                         <span className={styles.optionFallback}>No image</span>
                                     ) : (
-                                        <span className={styles.optionText}>{optionText || 'No image'}</span>
+                                        hasInlineHtml(optionText) ? (
+                                            <span
+                                                className={styles.optionText}
+                                                dangerouslySetInnerHTML={{ __html: sanitizeInlineHtml(optionText) }}
+                                            />
+                                        ) : (
+                                            <span className={styles.optionText}>{optionText || 'No image'}</span>
+                                        )
                                     )}
                                 </div>
                             </button>

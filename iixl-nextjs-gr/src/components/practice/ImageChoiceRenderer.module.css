@@ -9,8 +9,9 @@
     padding: 2.5rem;
     box-shadow: var(--card-shadow);
     animation: fadeIn 0.4s ease-out;
-    min-width: 600px;
-    max-height: 600px;
+    width: 100%;
+    min-width: 0;
+    max-height: min(78vh, 600px);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -34,22 +35,24 @@
 }
 
 .optionsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
 .optionsGrid.vertical {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .option {
-    background: #f8f9fa;
-    border: 3px solid transparent;
+    background: #ffffff;
+    border: 3px solid #9fdcf8;
     border-radius: var(--border-radius-lg);
     padding: 0.75rem;
     cursor: pointer;
@@ -61,17 +64,20 @@
     gap: 0.5rem;
     position: relative;
     min-height: 140px;
+    width: fit-content;
+    min-width: 150px;
+    max-width: 240px;
 }
 
 .option:hover:not(.disabled) {
-    border-color: #22c55e;
+    border-color: #74c9f2;
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.2);
+    box-shadow: 0 8px 24px rgba(31, 122, 214, 0.14);
 }
 
 .option.selected {
     border-color: #22c55e;
-    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    background: #e9f8ef;
     transform: scale(1.02);
 }
 
@@ -142,18 +148,19 @@
 }
 
 .submitButton {
-    width: 100%;
+    width: min(220px, 100%);
     background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
     color: white;
     border: none;
-    padding: 1rem 2rem;
+    padding: 0.62rem 1rem;
     border-radius: var(--border-radius-lg);
     font-weight: 600;
-    font-size: 0.96rem;
+    font-size: 0.88rem;
     cursor: pointer;
     transition: var(--transition-base);
     flex-shrink: 0;
-    margin-top: auto;
+    margin: auto auto 0;
+    display: block;
 }
 
 .submitButton:hover {
@@ -164,7 +171,6 @@
 @media (max-width: 768px) {
     .questionCard {
         padding: 1.5rem;
-        min-width: auto;
         max-height: 80vh;
     }
 
@@ -174,15 +180,18 @@
     }
 
     .optionsGrid {
-        grid-template-columns: 1fr;
+        justify-content: center;
     }
 
     .option {
-        padding: 0.75rem;
-        min-height: 120px;
+        padding: 0.55rem;
+        min-height: 92px;
+        min-width: 120px;
+        max-width: 180px;
+        margin: 0 auto;
     }
 
     .imageWrapper {
-        height: 100px;
+        height: 72px;
     }
 }

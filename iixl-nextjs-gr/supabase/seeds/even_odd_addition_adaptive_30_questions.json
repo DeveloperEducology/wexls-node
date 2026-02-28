@@ -1,0 +1,995 @@
+[
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 6,
+    "marks": 1,
+    "sort_order": 1,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q1", "type": "text", "content": "Is 19 + 40 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "19 is odd and 40 is even. Odd + even = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["parity", "odd_plus_even"],
+      "misconceptionCode": "parity_rule_error",
+      "misconceptionByOption": { "0": "odd_plus_even_as_even" },
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 6,
+    "marks": 1,
+    "sort_order": 2,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q2", "type": "text", "content": "Is 12 + 6 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + even = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["parity", "even_plus_even"],
+      "misconceptionCode": "even_plus_even_error",
+      "misconceptionByOption": { "1": "even_plus_even_as_odd" },
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 6,
+    "marks": 1,
+    "sort_order": 3,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q3", "type": "text", "content": "Is 7 + 5 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["parity", "odd_plus_odd"],
+      "misconceptionCode": "odd_plus_odd_error",
+      "misconceptionByOption": { "1": "odd_plus_odd_as_odd" },
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 7,
+    "marks": 1,
+    "sort_order": 4,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q4", "type": "text", "content": "Is 31 + 8 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + even = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["parity", "odd_plus_even"],
+      "misconceptionCode": "mixed_parity_error",
+      "misconceptionByOption": { "0": "odd_plus_even_as_even" },
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 7,
+    "marks": 1,
+    "sort_order": 5,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q5", "type": "text", "content": "Is 44 + 14 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + even = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["parity", "even_plus_even"],
+      "misconceptionCode": "even_pair_error",
+      "misconceptionByOption": { "1": "even_plus_even_as_odd" },
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 6,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q6", "type": "text", "content": "Is 25 + 25 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["parity", "odd_plus_odd"],
+      "misconceptionCode": "double_odd_error",
+      "misconceptionByOption": { "1": "odd_plus_odd_as_odd" },
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 7,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q7", "type": "text", "content": "Is 10 + 11 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + odd = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["parity", "mixed_parity"],
+      "misconceptionCode": "mixed_parity_error",
+      "misconceptionByOption": { "0": "even_odd_as_even" },
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 8,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q8", "type": "text", "content": "Is 61 + 3 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["parity", "odd_plus_odd"],
+      "misconceptionCode": "odd_pair_error",
+      "misconceptionByOption": { "1": "odd_plus_odd_as_odd" },
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 9,
+    "marks": 1,
+    "sort_order": 9,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q9", "type": "text", "content": "Is 28 + 9 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + odd = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "warmup",
+      "conceptTags": ["parity", "mixed_parity"],
+      "misconceptionCode": "mixed_parity_error",
+      "misconceptionByOption": { "0": "even_odd_as_even" },
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 9,
+    "marks": 1,
+    "sort_order": 10,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q10", "type": "text", "content": "Is 33 + 17 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "odd_plus_odd"],
+      "misconceptionCode": "odd_plus_odd_error",
+      "misconceptionByOption": { "1": "odd_plus_odd_as_odd" },
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 11,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q11", "type": "text", "content": "Is 102 + 57 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + odd = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "mixed_parity", "three_digit_addition"],
+      "misconceptionCode": "parity_ignore_last_digit",
+      "misconceptionByOption": { "0": "even_odd_as_even" },
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 12,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q12", "type": "text", "content": "Is 148 + 26 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + even = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "even_plus_even", "three_digit_addition"],
+      "misconceptionCode": "parity_rule_error",
+      "misconceptionByOption": { "1": "even_plus_even_as_odd" },
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 11,
+    "marks": 1,
+    "sort_order": 13,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q13", "type": "text", "content": "Is 99 + 101 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "odd_plus_odd", "mental_math"],
+      "misconceptionCode": "odd_pair_error",
+      "misconceptionByOption": { "1": "odd_plus_odd_as_odd" },
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 11,
+    "marks": 1,
+    "sort_order": 14,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q14", "type": "text", "content": "Is 250 + 11 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + odd = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "mixed_parity"],
+      "misconceptionCode": "mixed_parity_error",
+      "misconceptionByOption": { "0": "even_odd_as_even" },
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 12,
+    "marks": 1,
+    "sort_order": 15,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q15", "type": "text", "content": "Is 333 + 27 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "odd_plus_odd", "three_digit_addition"],
+      "misconceptionCode": "odd_plus_odd_error",
+      "misconceptionByOption": { "1": "odd_plus_odd_as_odd" },
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 12,
+    "marks": 1,
+    "sort_order": 16,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q16", "type": "text", "content": "Is 410 + 38 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + even = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "even_plus_even"],
+      "misconceptionCode": "even_plus_even_error",
+      "misconceptionByOption": { "1": "even_plus_even_as_odd" },
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 13,
+    "marks": 1,
+    "sort_order": 17,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q17", "type": "text", "content": "Is 721 + 4 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + even = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "odd_plus_even"],
+      "misconceptionCode": "mixed_parity_error",
+      "misconceptionByOption": { "0": "odd_plus_even_as_even" },
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 13,
+    "marks": 1,
+    "sort_order": 18,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q18", "type": "text", "content": "Is 808 + 9 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + odd = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "mixed_parity"],
+      "misconceptionCode": "mixed_parity_error",
+      "misconceptionByOption": { "0": "even_odd_as_even" },
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 14,
+    "marks": 1,
+    "sort_order": 19,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q19", "type": "text", "content": "Is 505 + 15 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "odd_plus_odd"],
+      "misconceptionCode": "odd_plus_odd_error",
+      "misconceptionByOption": { "1": "odd_plus_odd_as_odd" },
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 14,
+    "marks": 1,
+    "sort_order": 20,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q20", "type": "text", "content": "Is 902 + 58 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + even = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "core",
+      "conceptTags": ["parity", "even_plus_even", "challenge_ready"],
+      "misconceptionCode": "even_plus_even_error",
+      "misconceptionByOption": { "1": "even_plus_even_as_odd" },
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 21,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q21", "type": "text", "content": "Recovery: Is 14 + 7 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + odd = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["parity", "mixed_parity", "remediation"],
+      "misconceptionCode": "mixed_parity_error",
+      "remediationFor": ["mixed_parity_error", "parity_rule_error"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 22,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q22", "type": "text", "content": "Recovery: Is 9 + 9 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["parity", "odd_plus_odd", "remediation"],
+      "misconceptionCode": "odd_plus_odd_error",
+      "remediationFor": ["odd_plus_odd_error", "odd_pair_error"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 23,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q23", "type": "text", "content": "Recovery: Is 16 + 8 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + even = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["parity", "even_plus_even", "remediation"],
+      "misconceptionCode": "even_plus_even_error",
+      "remediationFor": ["even_plus_even_error", "even_pair_error"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 24,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q24", "type": "text", "content": "Recovery: Is 207 + 12 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + even = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["parity", "mixed_parity", "remediation"],
+      "misconceptionCode": "mixed_parity_error",
+      "remediationFor": ["mixed_parity_error", "parity_ignore_last_digit"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": true,
+      "remediationLevel": 2
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 25,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q25", "type": "text", "content": "Recovery: Is 113 + 113 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "recovery",
+      "conceptTags": ["parity", "odd_plus_odd", "remediation"],
+      "misconceptionCode": "odd_plus_odd_error",
+      "remediationFor": ["odd_plus_odd_error", "odd_pair_error"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "isRemediation": true,
+      "remediationLevel": 2
+    }
+  },
+
+  {
+     
+    "type": "mcq",
+    "difficulty": "hard",
+    "complexity": 15,
+    "marks": 1,
+    "sort_order": 26,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q26", "type": "text", "content": "Challenge: Is 999 + 1 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd? No, 1 is odd but 999 is odd so odd+odd=even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": ["parity", "boundary_values", "mastery_check"],
+      "misconceptionCode": "challenge_parity_error",
+      "misconceptionByOption": { "1": "boundary_confusion" },
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "hard",
+    "complexity": 16,
+    "marks": 1,
+    "sort_order": 27,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q27", "type": "text", "content": "Challenge: Is 1001 + 2001 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": ["parity", "large_numbers", "odd_plus_odd"],
+      "misconceptionCode": "large_number_parity_error",
+      "misconceptionByOption": { "1": "odd_plus_odd_as_odd" },
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "hard",
+    "complexity": 16,
+    "marks": 1,
+    "sort_order": 28,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q28", "type": "text", "content": "Challenge: Is 2468 + 1357 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + odd = odd.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": ["parity", "mixed_parity", "large_numbers"],
+      "misconceptionCode": "challenge_mixed_parity_error",
+      "misconceptionByOption": { "0": "even_odd_as_even" },
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "hard",
+    "complexity": 17,
+    "marks": 1,
+    "sort_order": 29,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q29", "type": "text", "content": "Challenge: Is 7000 + 3000 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Even + even = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": ["parity", "even_plus_even", "mastery_check"],
+      "misconceptionCode": "challenge_even_error",
+      "misconceptionByOption": { "1": "even_plus_even_as_odd" },
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "hard",
+    "complexity": 18,
+    "marks": 1,
+    "sort_order": 30,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      { "id": "q30", "type": "text", "content": "Final check: Is 12345 + 6789 even or odd?", "isVertical": true, "hasAudio": true }
+    ],
+    "options": ["even", "odd"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 0,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Odd + odd = even.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "phaseHint": "challenge",
+      "conceptTags": ["parity", "odd_plus_odd", "final_mastery"],
+      "misconceptionCode": "final_parity_mastery_gap",
+      "misconceptionByOption": { "1": "odd_plus_odd_as_odd" },
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  }
+]

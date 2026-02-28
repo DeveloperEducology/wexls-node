@@ -35,7 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## Supabase setup
+## MongoDB setup
 
 1. Install dependencies:
 
@@ -43,15 +43,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 npm install
 ```
 
-2. Copy `.env.example` to `.env.local` and fill values:
+2. Set your MongoDB URI in `.env.local`:
 
 ```bash
-cp .env.example .env.local
+MONGODB_URI=<your-mongodb-uri>
 ```
 
-3. In Supabase SQL editor, run `supabase/schema.sql`.
-
-4. Start the app:
+3. Start the app:
 
 ```bash
 npm run dev
@@ -61,4 +59,26 @@ Practice route now calls:
 - `GET /api/practice/[microskillId]` to fetch the first question for that `microskillId`
 - `POST /api/practice/[microskillId]/submit` to log the answer and fetch the next adaptive question
 
-If Supabase env vars or tables are missing, question loading will fail with a clear error.
+If MongoDB is unreachable or collections are missing, question loading will fail with a clear error.
+
+## Backend API (localhost:4000)
+
+Run backend API:
+
+```bash
+npm run dev:backend
+```
+
+Set frontend backend URL in `.env.local`:
+
+```bash
+NEXT_PUBLIC_BACKEND_URL=http://localhost:4000
+```
+
+Backend endpoints:
+- `GET /api/health`
+- `GET /api/practice/:microskillId`
+- `POST /api/practice/:microskillId/submit`
+- `GET /api/admin/questions`
+- `POST /api/admin/questions`
+- `DELETE /api/admin/questions`

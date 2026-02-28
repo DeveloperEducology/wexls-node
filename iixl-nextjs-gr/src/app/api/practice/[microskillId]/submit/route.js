@@ -1,15 +1,353 @@
 import { NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase/server';
 import { mapDbQuestion } from '@/lib/practice/questionMapper';
+import { resolveMicroskillIdByKey } from '@/lib/curriculum/server';
 
-const SKILL_COLUMNS = ['micro_skill_id', 'microskill_id'];
+const SKILL_COLUMNS = ['microSkillId', 'micro_skill_id', 'microskill_id'];
 const ORDER_COLUMNS = ['sort_order', 'idx', 'created_at', 'id'];
 const DIFFICULTIES = ['easy', 'medium', 'hard'];
+
+function toPublicQuestion(question) {
+  if (!question) return null;
+  const fourPics = getFourPicsPuzzle(question);
+
+  return {
+    id: question.id,
+    microSkillId: question.microSkillId ?? null,
+    type: question.type,
+    difficulty: question.difficulty ?? 'easy',
+    complexity: Number(question.complexity ?? 0),
+    parts: question.parts ?? [],
+    options: question.options ?? [],
+    items: question.items ?? [],
+    dragItems: question.dragItems ?? [],
+    dropGroups: question.dropGroups ?? [],
+    adaptiveConfig: question.adaptiveConfig ?? null,
+    measureTarget: getMeasureTarget(question),
+    wordLength: fourPics.wordLength,
+    letterBank: fourPics.letterBank,
+    isMultiSelect: Boolean(question.isMultiSelect),
+    isVertical: Boolean(question.isVertical),
+    showSubmitButton: Boolean(question.showSubmitButton),
+  };
+}
+
+function parseMaybeJson(value, fallback = null) {
+  if (typeof value !== 'string') return fallback;
+  try {
+    return JSON.parse(value);
+  } catch {
+    return fallback;
+  }
+}
+
+function parseNumber(value) {
+  if (typeof value === 'number' && Number.isFinite(value)) return value;
+  const str = String(value ?? '').trim();
+  if (!str) return null;
+  const match = str.match(/-?\d+(\.\d+)?/);
+  if (!match) return null;
+  const parsed = Number(match[0]);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function parseFraction(value) {
+  const text = String(value ?? '').trim();
+  const match = text.match(/^(-?\d+)\s*\/\s*(\d+)$/);
+  if (!match) return null;
+  const numerator = Number(match[1]);
+  const denominator = Number(match[2]);
+  if (!Number.isFinite(numerator) || !Number.isFinite(denominator) || denominator <= 0) return null;
+  return { numerator, denominator };
+}
+
+function extractFractionFromParts(parts) {
+  const list = Array.isArray(parts) ? parts : [];
+  for (const part of list) {
+    const content = String(part?.content ?? '');
+    const direct = parseFraction(content);
+    if (direct) return direct;
+    const embedded = content.match(/(-?\d+)\s*\/\s*(\d+)/);
+    if (embedded) {
+      return {
+        numerator: Number(embedded[1]),
+        denominator: Number(embedded[2]),
+      };
+    }
+  }
+  return null;
+}
+
+function resolveShadeGridGeometry(question) {
+  const config = question?.adaptiveConfig ?? {};
+  const explicitRows = parseNumber(config.gridRows);
+  const explicitCols = parseNumber(config.gridCols);
+  const orientation = String(
+    config.orientation || config.gridOrientation || config.barOrientation || 'vertical'
+  ).toLowerCase() === 'horizontal'
+    ? 'horizontal'
+    : 'vertical';
+  const gridMode = String(config.gridMode || 'auto').toLowerCase();
+  const fraction = (
+    parseFraction(question?.correctAnswerText) ||
+    extractFractionFromParts(question?.parts) ||
+    (parseNumber(config.numerator) != null && parseNumber(config.denominator) != null
+      ? { numerator: parseNumber(config.numerator), denominator: parseNumber(config.denominator) }
+      : null)
+  );
+  const denominator = parseNumber(config.denominator) ?? fraction?.denominator ?? null;
+  const shouldUseFractionBar = (
+    gridMode === 'fractionbar' ||
+    (gridMode === 'auto' && denominator && denominator > 1 && denominator <= 20)
+  );
+
+  let rows = explicitRows;
+  let cols = explicitCols;
+  if (shouldUseFractionBar && denominator) {
+    if (orientation === 'horizontal') {
+      rows = denominator;
+      cols = 1;
+    } else {
+      rows = 1;
+      cols = denominator;
+    }
+  } else if (!(rows && cols)) {
+    if (denominator === 100) {
+      rows = 10;
+      cols = 10;
+    } else {
+      rows = 10;
+      cols = 10;
+    }
+  }
+
+  rows = Math.max(1, Math.min(20, Math.floor(rows || 10)));
+  cols = Math.max(1, Math.min(20, Math.floor(cols || 10)));
+
+  const modelType = String(config.modelType || config.visualModel || config.shapeModel || '').toLowerCase();
+  const isPieModel = modelType === 'pie' || modelType === 'fractioncircle' || modelType === 'circlefraction';
+  const pieSegments = Math.max(2, Math.min(36, Math.floor(parseNumber(config.segments) ?? denominator ?? 10)));
+  const totalCells = isPieModel ? pieSegments : (rows * cols);
+
+  return { rows, cols, totalCells, fraction };
+}
+
+function parseShadeGridTarget(question) {
+  const config = question?.adaptiveConfig ?? {};
+  const geometry = resolveShadeGridGeometry(question);
+  const explicit = parseNumber(config.targetShaded);
+  if (explicit != null) return explicit;
+
+  const numerator = parseNumber(config.numerator);
+  const denominator = parseNumber(config.denominator);
+  if (numerator != null && denominator != null && denominator > 0) {
+    return Math.round((numerator / denominator) * geometry.totalCells);
+  }
+
+  const fraction = geometry.fraction;
+  if (fraction) return Math.round((fraction.numerator / fraction.denominator) * geometry.totalCells);
+
+  return parseNumber(question?.correctAnswerText);
+}
+
+function getMeasureTarget(question) {
+  if (!question || question.type !== 'measure') return null;
+
+  return (
+    parseNumber(question.adaptiveConfig?.target_units) ??
+    parseNumber(question.adaptiveConfig?.line_units) ??
+    parseNumber(question.adaptiveConfig?.line_length) ??
+    parseNumber(question.adaptiveConfig?.target_length) ??
+    parseNumber(question.correctAnswerText)
+  );
+}
+
+function shuffleLetters(letters) {
+  const out = [...letters];
+  for (let i = out.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+function getFourPicsPuzzle(question) {
+  if (!question || question.type !== 'fourPicsOneWord') return { wordLength: null, letterBank: null };
+
+  const answer = String(question.correctAnswerText ?? '')
+    .toUpperCase()
+    .replace(/[^A-Z0-9]/g, '');
+
+  if (!answer) return { wordLength: null, letterBank: null };
+  return {
+    wordLength: answer.length,
+    letterBank: shuffleLetters(answer.split('')),
+  };
+}
 
 function normalizeDifficulty(value) {
   const str = String(value ?? '').trim().toLowerCase();
   if (DIFFICULTIES.includes(str)) return str;
   return 'medium';
+}
+
+function getOptionLabel(option, index) {
+  if (typeof option === 'object' && option !== null) {
+    const label = option.label ?? option.text ?? '';
+    if (label) return String(label);
+  }
+  if (typeof option === 'string') {
+    const trimmed = option.trim();
+    if (
+      !trimmed.toLowerCase().startsWith('<svg') &&
+      !/^https?:\/\//i.test(trimmed) &&
+      !trimmed.startsWith('/') &&
+      !trimmed.startsWith('data:image/')
+    ) {
+      return option;
+    }
+  }
+  return `Option ${index + 1}`;
+}
+
+function validateAnswer(question, answer) {
+  if (!question) return false;
+
+  switch (question.type) {
+    case 'mcq':
+    case 'imageChoice':
+      if (question.isMultiSelect) {
+        const selected = Array.isArray(answer) ? [...answer].map(Number).sort() : [];
+        const correct = Array.isArray(question.correctAnswerIndices)
+          ? [...question.correctAnswerIndices].map(Number).sort()
+          : [];
+        return JSON.stringify(selected) === JSON.stringify(correct);
+      }
+      return Number(answer) === Number(question.correctAnswerIndex);
+
+    case 'textInput':
+      return String(answer ?? '').trim().toLowerCase() === String(question.correctAnswerText ?? '').trim().toLowerCase();
+
+    case 'fillInTheBlank':
+    case 'gridArithmetic': {
+      const correctAnswers = parseMaybeJson(question.correctAnswerText, {});
+      if (!correctAnswers || typeof correctAnswers !== 'object') return false;
+      return Object.keys(correctAnswers).every((key) => {
+        return String(answer?.[key] ?? '').trim().toLowerCase() === String(correctAnswers[key]).trim().toLowerCase();
+      });
+    }
+
+    case 'dragAndDrop':
+      return (question.dragItems || [])
+        .filter((item) => item.targetGroupId != null && String(item.targetGroupId).trim() !== '')
+        .every((item) => String(answer?.[item.id] ?? '') === String(item.targetGroupId));
+
+    case 'sorting': {
+      const expectedOrder = parseMaybeJson(question.correctAnswerText, null);
+      if (Array.isArray(expectedOrder) && expectedOrder.length > 0) {
+        return JSON.stringify((answer || []).map(String)) === JSON.stringify(expectedOrder.map(String));
+      }
+
+      if ((question.items || []).some((item) => item.correctPosition != null)) {
+        const expectedByPosition = [...(question.items || [])]
+          .sort((a, b) => Number(a.correctPosition ?? 0) - Number(b.correctPosition ?? 0))
+          .map((item) => String(item.id));
+        return JSON.stringify((answer || []).map(String)) === JSON.stringify(expectedByPosition);
+      }
+      return false;
+    }
+
+    case 'fourPicsOneWord':
+      return (Array.isArray(answer) ? answer.join('') : String(answer ?? '')).toUpperCase() === String(question.correctAnswerText ?? '').toUpperCase();
+
+    case 'measure': {
+      const expected = parseNumber(question.correctAnswerText);
+      const actual = parseNumber(answer);
+      if (expected == null || actual == null) return false;
+      return Math.abs(actual - expected) < 0.0001;
+    }
+
+    case 'shadeGrid': {
+      const expected = parseShadeGridTarget(question);
+      if (expected == null) return false;
+      const actual = (
+        typeof answer === 'number' ? answer :
+          typeof answer === 'string' ? parseNumber(answer) :
+            Array.isArray(answer) ? answer.length :
+              Array.isArray(answer?.selected) ? answer.selected.length :
+                parseNumber(answer?.count)
+      );
+      if (actual == null) return false;
+      return Number(actual) === Number(expected);
+    }
+
+    default:
+      return false;
+  }
+}
+
+function buildFeedback(question) {
+  const feedback = {
+    solution: question?.solution ?? '',
+    correctAnswerDisplay: '',
+    correctOptionIndices: [],
+  };
+  if (!question) return feedback;
+
+  switch (question.type) {
+    case 'mcq':
+    case 'imageChoice':
+      if (question.isMultiSelect) {
+        const indices = Array.isArray(question.correctAnswerIndices) ? question.correctAnswerIndices : [];
+        feedback.correctOptionIndices = indices.map((i) => Number(i)).filter(Number.isFinite);
+        feedback.correctAnswerDisplay = feedback.correctOptionIndices
+          .map((idx) => getOptionLabel(question.options?.[idx], idx))
+          .join(', ');
+        return feedback;
+      }
+      feedback.correctOptionIndices = [Number(question.correctAnswerIndex)].filter(Number.isFinite);
+      feedback.correctAnswerDisplay = feedback.correctOptionIndices.length > 0
+        ? getOptionLabel(question.options?.[feedback.correctOptionIndices[0]], feedback.correctOptionIndices[0])
+        : '';
+      return feedback;
+
+    case 'fillInTheBlank':
+    case 'gridArithmetic': {
+      const parsed = parseMaybeJson(question.correctAnswerText, {});
+      if (parsed && typeof parsed === 'object') {
+        const arithmeticPart = (question.parts || []).find((part) => part?.type === 'arithmeticLayout');
+        const rows = Array.isArray(arithmeticPart?.layout?.rows) ? arithmeticPart.layout.rows : [];
+        const answerRow = rows.find((row) => String(row?.kind || '').toLowerCase() === 'answer');
+        const cells = Array.isArray(answerRow?.cells) ? answerRow.cells : [];
+
+        if (cells.length > 0) {
+          const prefix = String(answerRow?.prefix || '');
+          const joined = cells.map((cell, idx) => String(parsed[cell?.id ?? `cell_${idx}`] ?? '')).join('');
+          feedback.correctAnswerDisplay = `${prefix}${joined}`.trim();
+        } else {
+          feedback.correctAnswerDisplay = Object.entries(parsed).map(([k, v]) => `${k}: ${v}`).join(', ');
+        }
+      } else {
+        feedback.correctAnswerDisplay = String(question.correctAnswerText ?? '');
+      }
+      return feedback;
+    }
+
+    case 'sorting': {
+      const orderedIds = parseMaybeJson(question.correctAnswerText, []);
+      if (Array.isArray(orderedIds) && orderedIds.length > 0) {
+        const labelById = new Map((question.items || []).map((item) => [String(item.id), String(item.content ?? item.id)]));
+        feedback.correctAnswerDisplay = orderedIds.map((id) => labelById.get(String(id)) || String(id)).join(', ');
+      } else {
+        feedback.correctAnswerDisplay = String(question.correctAnswerText ?? '');
+      }
+      return feedback;
+    }
+
+    default:
+      feedback.correctAnswerDisplay = String(question.correctAnswerText ?? '');
+      return feedback;
+  }
 }
 
 function chooseAdaptiveQuestion(candidates, currentQuestionId, isCorrect) {
@@ -27,14 +365,8 @@ function chooseAdaptiveQuestion(candidates, currentQuestionId, isCorrect) {
   );
   const targetDifficulty = DIFFICULTIES[targetIdx];
 
-  const targetPool = remaining.filter(
-    (q) => normalizeDifficulty(q.difficulty) === targetDifficulty
-  );
-
-  const fallbackPool = remaining.filter(
-    (q) => normalizeDifficulty(q.difficulty) === currentDifficulty
-  );
-
+  const targetPool = remaining.filter((q) => normalizeDifficulty(q.difficulty) === targetDifficulty);
+  const fallbackPool = remaining.filter((q) => normalizeDifficulty(q.difficulty) === currentDifficulty);
   const pool = targetPool.length > 0 ? targetPool : (fallbackPool.length > 0 ? fallbackPool : remaining);
 
   const currentComplexity = Number(current?.complexity ?? current?.idx ?? current?.sort_order ?? 0);
@@ -58,9 +390,7 @@ async function fetchQuestionsByMicroskill(supabase, microskillId) {
         .order(orderColumn, { ascending: true }));
 
       if (!error) return data ?? [];
-      if (!error.message?.includes(skillColumn) && !error.message?.includes(orderColumn)) {
-        break;
-      }
+      if (!error.message?.includes(skillColumn) && !error.message?.includes(orderColumn)) break;
     }
   }
 
@@ -77,13 +407,8 @@ async function fetchAttemptedIds(supabase, studentId, microskillId) {
       .eq('student_id', studentId)
       .eq(skillColumn, microskillId);
 
-    if (!error) {
-      return new Set((data ?? []).map((r) => String(r.question_id)));
-    }
-
-    if (!error.message?.includes(skillColumn)) {
-      break;
-    }
+    if (!error) return new Set((data ?? []).map((r) => String(r.question_id)));
+    if (!error.message?.includes(skillColumn)) break;
   }
 
   return new Set();
@@ -101,15 +426,16 @@ async function insertLog(supabase, payload) {
 
     const { error } = await supabase.from('student_question_log').insert(logPayload);
     if (!error) return;
-
-    if (!error.message?.includes(skillColumn)) {
-      return;
-    }
+    if (!error.message?.includes(skillColumn)) return;
   }
 }
 
 export async function POST(req, { params }) {
-  const { microskillId } = await params;
+  const { microskillId: microskillKey } = await params;
+  const microskillId = await resolveMicroskillIdByKey(microskillKey);
+  if (!microskillId) {
+    return NextResponse.json({ error: 'Microskill not found.' }, { status: 404 });
+  }
 
   let payload;
   try {
@@ -121,25 +447,34 @@ export async function POST(req, { params }) {
   const {
     studentId = null,
     questionId,
-    isCorrect,
     answer = null,
     seenQuestionIds = [],
   } = payload ?? {};
 
-  if (!questionId || typeof isCorrect !== 'boolean') {
-    return NextResponse.json(
-      { error: 'questionId and isCorrect are required.' },
-      { status: 400 }
-    );
+  if (!questionId) {
+    return NextResponse.json({ error: 'questionId is required.' }, { status: 400 });
   }
 
   const supabase = createServerClient();
   if (!supabase) {
-    return NextResponse.json(
-      { error: 'Supabase is not configured on server.' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Supabase is not configured on server.' }, { status: 500 });
   }
+
+  let rawQuestions;
+  try {
+    rawQuestions = await fetchQuestionsByMicroskill(supabase, microskillId);
+  } catch (err) {
+    return NextResponse.json({ error: err.message ?? 'Failed to fetch questions.' }, { status: 500 });
+  }
+
+  const mappedQuestions = rawQuestions.map(mapDbQuestion);
+  const currentQuestion = mappedQuestions.find((q) => String(q.id) === String(questionId));
+  if (!currentQuestion) {
+    return NextResponse.json({ error: 'Question not found for this microskill.' }, { status: 404 });
+  }
+
+  const isCorrect = validateAnswer(currentQuestion, answer);
+  const feedback = buildFeedback(currentQuestion);
 
   await insertLog(supabase, { studentId, microskillId, questionId, isCorrect, answer });
 
@@ -156,37 +491,24 @@ export async function POST(req, { params }) {
     if (nextRow) {
       return NextResponse.json({
         source: 'supabase_rpc',
-        nextQuestion: mapDbQuestion(nextRow),
+        isCorrect,
+        feedback,
+        nextQuestion: toPublicQuestion(mapDbQuestion(nextRow)),
       });
     }
   }
 
-  let questions;
-  try {
-    questions = await fetchQuestionsByMicroskill(supabase, microskillId);
-  } catch (err) {
-    return NextResponse.json(
-      { error: err.message ?? 'Failed to fetch questions.' },
-      { status: 500 }
-    );
-  }
-
   const attemptedIds = await fetchAttemptedIds(supabase, studentId, microskillId);
-  const clientSeenIds = new Set(
-    Array.isArray(seenQuestionIds) ? seenQuestionIds.map((id) => String(id)) : []
-  );
+  const clientSeenIds = new Set(Array.isArray(seenQuestionIds) ? seenQuestionIds.map((id) => String(id)) : []);
   const excludedIds = new Set([...attemptedIds, ...clientSeenIds, String(questionId)]);
+  const unseen = mappedQuestions.filter((q) => !excludedIds.has(String(q.id)));
 
-  const unseen = questions.filter((q) => !excludedIds.has(String(q.id)));
-
-  const nextQuestion = chooseAdaptiveQuestion(
-    unseen.length > 0 ? unseen : questions,
-    questionId,
-    isCorrect
-  );
+  const nextQuestion = chooseAdaptiveQuestion(unseen.length > 0 ? unseen : mappedQuestions, questionId, isCorrect);
 
   return NextResponse.json({
     source: 'supabase_adaptive',
-    nextQuestion: nextQuestion ? mapDbQuestion(nextQuestion) : null,
+    isCorrect,
+    feedback,
+    nextQuestion: toPublicQuestion(nextQuestion),
   });
 }

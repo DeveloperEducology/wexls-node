@@ -75,37 +75,7 @@
 .authButtons {
   display: flex;
   gap: 1rem;
-}
-
-.signInBtn,
-.joinBtn {
-  padding: 0.625rem 1.5rem;
-  border-radius: var(--border-radius-lg);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: var(--transition-base);
-}
-
-.signInBtn {
-  background: transparent;
-  color: #16a34a;
-  border: 2px solid #16a34a;
-}
-
-.signInBtn:hover {
-  background: #f0fdf4;
-  transform: translateY(-2px);
-}
-
-.joinBtn {
-  background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
-  color: white;
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
-}
-
-.joinBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+  align-items: center;
 }
 
 /* Grades Section */
@@ -113,11 +83,32 @@
   flex: 1;
   padding: 4rem 2rem;
   animation: fadeIn 1s ease-out;
+  position: relative;
+  overflow: hidden;
+  background-image: url("/gradebackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gradesSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(238, 247, 255, 0.88) 0%,
+    rgba(236, 246, 255, 0.94) 45%,
+    rgba(234, 245, 255, 0.97) 100%
+  );
+  pointer-events: none;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .sectionTitle {
@@ -170,30 +161,49 @@
 
 @media (max-width: 768px) {
   .headerContent {
-    padding: 1rem 1.5rem;
-    flex-wrap: wrap;
+    padding: 0.85rem 1rem 0.7rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo auth"
+      "nav nav";
+    align-items: center;
+    gap: 0.45rem 0.8rem;
+  }
+
+  .logo {
+    grid-area: logo;
   }
 
   .nav {
-    order: 3;
+    grid-area: nav;
     width: 100%;
-    justify-content: center;
-    padding-top: 0.5rem;
-    gap: 1.5rem;
+    justify-content: flex-start;
+    padding-top: 0.15rem;
+    gap: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navLink {
+    white-space: nowrap;
+    font-size: 0.95rem;
+    padding: 0.3rem 0;
   }
 
   .authButtons {
-    gap: 0.75rem;
-  }
-
-  .signInBtn,
-  .joinBtn {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.9rem;
+    grid-area: auth;
+    justify-self: end;
+    gap: 0.5rem;
   }
 
   .gradesSection {
-    padding: 3rem 1.5rem;
+    padding: 2.4rem 1rem;
   }
 
   .gradesGrid {
@@ -216,16 +226,20 @@
 
 @media (max-width: 480px) {
   .logoText {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .authButtons {
-    width: 100%;
-    order: 2;
+    width: auto;
+    justify-content: flex-end;
+    gap: 0.4rem;
   }
 
-  .signInBtn,
-  .joinBtn {
-    flex: 1;
+  .nav {
+    gap: 0.8rem;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
   }
 }

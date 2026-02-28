@@ -1,0 +1,1298 @@
+[
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 6,
+    "marks": 1,
+    "sort_order": 1,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which of these is a whole number?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["-3", "0", "1/2", "sqrt(2)"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "0 is a whole number.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["whole_numbers", "real_number_tree"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "misconceptionCode": "whole_number_identification_error",
+      "misconceptionByOption": {
+        "0": "integer_vs_whole_confusion",
+        "2": "fraction_as_whole_confusion",
+        "3": "irrational_as_whole_confusion"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 7,
+    "marks": 1,
+    "sort_order": 2,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which number is an integer but not a whole number?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["5", "-4", "0", "3/5"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "-4 is an integer, but whole numbers do not include negatives.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["integers", "whole_numbers"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "misconceptionCode": "integer_vs_whole_confusion",
+      "misconceptionByOption": {
+        "0": "whole_only_bias",
+        "2": "zero_overgeneralization",
+        "3": "fraction_vs_integer_confusion"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 3,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which number is rational?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["pi", "sqrt(7)", "3/4", "sqrt(5)"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 2,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "3/4 is a rational number because it is a ratio of integers.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["rational_numbers", "fraction_form"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "misconceptionCode": "rational_identification_error",
+      "misconceptionByOption": {
+        "0": "pi_as_rational_confusion",
+        "1": "root_as_rational_confusion",
+        "3": "root_as_rational_confusion"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 8,
+    "marks": 1,
+    "sort_order": 4,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which number is irrational?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["-6", "7/9", "sqrt(2)", "0"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 2,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "sqrt(2) is irrational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["irrational_numbers", "square_roots"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "misconceptionCode": "irrational_identification_error",
+      "misconceptionByOption": {
+        "0": "negative_integer_as_irrational",
+        "1": "fraction_as_irrational",
+        "3": "zero_as_irrational"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "easy",
+    "complexity": 9,
+    "marks": 1,
+    "sort_order": 5,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Fill in the blank: Every whole number is a(n) ____.",
+        "isVertical": true,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_1",
+        "type": "input",
+        "content": "",
+        "isVertical": false,
+        "hasAudio": false,
+        "expectedType": "string"
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_1\":\"integer\"}",
+    "solution": "Whole numbers are a subset of integers.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["set_relationships", "whole_to_integer"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "misconceptionCode": "subset_relationship_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "textInput",
+    "difficulty": "easy",
+    "complexity": 9,
+    "marks": 1,
+    "sort_order": 6,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Type one rational number between 0 and 1.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "1/2",
+    "solution": "Any fraction like 1/2, 1/3, 3/4 is rational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["rational_numbers", "fraction_examples"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "misconceptionCode": "rational_example_generation_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "sorting",
+    "difficulty": "easy",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 7,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Sort these sets from smallest to largest: Whole numbers, Integers, Rational numbers, Real numbers.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [
+      { "id": "s1", "content": "Rational numbers" },
+      { "id": "s2", "content": "Whole numbers" },
+      { "id": "s3", "content": "Real numbers" },
+      { "id": "s4", "content": "Integers" }
+    ],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "[\"s2\",\"s4\",\"s1\",\"s3\"]",
+    "solution": "Whole ⊂ Integers ⊂ Rational ⊂ Real.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["set_hierarchy", "real_number_tree"],
+      "targetComplexityBand": "low",
+      "inputMode": "drag_sort",
+      "misconceptionCode": "set_hierarchy_order_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "dragAndDrop",
+    "difficulty": "easy",
+    "complexity": 10,
+    "marks": 1,
+    "sort_order": 8,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Drag each number to the correct group.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [
+      { "id": "d1", "content": "-2", "targetGroupId": "g_integer" },
+      { "id": "d2", "content": "3/5", "targetGroupId": "g_rational" },
+      { "id": "d3", "content": "sqrt(3)", "targetGroupId": "g_irrational" },
+      { "id": "d4", "content": "0", "targetGroupId": "g_whole" }
+    ],
+    "drop_groups": [
+      { "id": "g_whole", "label": "Whole" },
+      { "id": "g_integer", "label": "Integer (not whole)" },
+      { "id": "g_rational", "label": "Rational (non-integer)" },
+      { "id": "g_irrational", "label": "Irrational" }
+    ],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "0 is whole, -2 is integer, 3/5 is rational, and sqrt(3) is irrational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["classification", "real_number_tree"],
+      "targetComplexityBand": "low",
+      "inputMode": "manipulative",
+      "misconceptionCode": "classification_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 11,
+    "marks": 1,
+    "sort_order": 9,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which statement is true?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [
+      "All integers are whole numbers",
+      "All whole numbers are integers",
+      "All irrational numbers are integers",
+      "All rational numbers are irrational"
+    ],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Every whole number is an integer, but not every integer is whole.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["set_relationships", "whole_numbers", "integers"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "misconceptionCode": "set_relationship_error",
+      "misconceptionByOption": {
+        "0": "integer_to_whole_overgeneralization",
+        "2": "irrational_integer_confusion",
+        "3": "rational_irrational_confusion"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "easy",
+    "complexity": 11,
+    "marks": 1,
+    "sort_order": 10,
+    "is_multi_select": true,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Select all rational numbers.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["2.5", "sqrt(11)", "-7", "pi"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [0, 2],
+    "correct_answer_text": null,
+    "solution": "2.5 and -7 are rational. sqrt(11) and pi are irrational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["rational_numbers", "terminating_decimal", "integers"],
+      "targetComplexityBand": "low",
+      "inputMode": "default",
+      "misconceptionCode": "multi_select_rational_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 12,
+    "marks": 1,
+    "sort_order": 11,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which decimal is irrational?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["0.375", "0.121212...", "0.1010010001...", "-2.75"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 2,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "0.1010010001... is non-terminating non-repeating, so irrational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["decimals", "irrational_numbers"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "misconceptionCode": "decimal_pattern_misread",
+      "misconceptionByOption": {
+        "0": "terminating_as_irrational",
+        "1": "repeating_as_irrational",
+        "3": "terminating_as_irrational"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 12,
+    "marks": 1,
+    "sort_order": 12,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which of the following is NOT rational?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["-22/7", "sqrt(9)", "sqrt(10)", "0"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 2,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "sqrt(10) is irrational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["square_roots", "rational_vs_irrational"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "misconceptionCode": "root_classification_error",
+      "misconceptionByOption": {
+        "0": "fraction_as_irrational",
+        "1": "perfect_square_root_as_irrational",
+        "3": "zero_as_irrational"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 13,
+    "marks": 1,
+    "sort_order": 13,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Fill in the blank: Every integer is a(n) ____ number.",
+        "isVertical": true,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_1",
+        "type": "input",
+        "content": "",
+        "isVertical": false,
+        "hasAudio": false,
+        "expectedType": "string"
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_1\":\"rational\"}",
+    "solution": "Any integer n can be written as n/1, so it is rational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["integers", "fraction_form"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "misconceptionCode": "integer_not_rational_misconception",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 13,
+    "marks": 1,
+    "sort_order": 14,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which set contains 0, 1, 2, 3, ...?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["Integers", "Whole numbers", "Rational numbers only", "Irrational numbers"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "0, 1, 2, 3... are whole numbers.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["whole_numbers", "set_notation"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "misconceptionCode": "whole_set_definition_error",
+      "misconceptionByOption": {
+        "0": "integer_set_confusion",
+        "2": "exclusive_set_confusion",
+        "3": "irrational_set_confusion"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "sorting",
+    "difficulty": "medium",
+    "complexity": 14,
+    "marks": 1,
+    "sort_order": 15,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Arrange these from least to greatest: -3, 0, 1/2, sqrt(2).",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [
+      { "id": "n1", "content": "sqrt(2)" },
+      { "id": "n2", "content": "-3" },
+      { "id": "n3", "content": "1/2" },
+      { "id": "n4", "content": "0" }
+    ],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "[\"n2\",\"n4\",\"n3\",\"n1\"]",
+    "solution": "-3 < 0 < 1/2 < sqrt(2).",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["number_line_order", "mixed_real_numbers"],
+      "targetComplexityBand": "mid",
+      "inputMode": "drag_sort",
+      "misconceptionCode": "mixed_ordering_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 14,
+    "marks": 1,
+    "sort_order": 16,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which statement is false?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [
+      "All whole numbers are rational",
+      "All rational numbers are integers",
+      "Some integers are negative",
+      "All irrational numbers are real"
+    ],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Not all rational numbers are integers (e.g., 1/2).",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["set_relationships", "rational_numbers"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "misconceptionCode": "rational_integer_overgeneralization",
+      "misconceptionByOption": {
+        "0": "whole_not_rational_misbelief",
+        "2": "negative_integer_denial",
+        "3": "irrational_not_real_misbelief"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "dragAndDrop",
+    "difficulty": "medium",
+    "complexity": 15,
+    "marks": 1,
+    "sort_order": 17,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Classify the numbers into Rational and Irrational.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [
+      { "id": "d1", "content": "2/9", "targetGroupId": "g_rat" },
+      { "id": "d2", "content": "sqrt(13)", "targetGroupId": "g_irr" },
+      { "id": "d3", "content": "0.75", "targetGroupId": "g_rat" },
+      { "id": "d4", "content": "pi", "targetGroupId": "g_irr" }
+    ],
+    "drop_groups": [
+      { "id": "g_rat", "label": "Rational" },
+      { "id": "g_irr", "label": "Irrational" }
+    ],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "2/9 and 0.75 are rational; sqrt(13) and pi are irrational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["rational_vs_irrational", "classification"],
+      "targetComplexityBand": "mid",
+      "inputMode": "manipulative",
+      "misconceptionCode": "rational_irrational_classification_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 15,
+    "marks": 1,
+    "sort_order": 18,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "If x is a whole number, which is always true?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [
+      "x is irrational",
+      "x is rational",
+      "x is negative",
+      "x is non-real"
+    ],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Every whole number can be written as x/1, so it is rational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["whole_to_rational", "set_relationships"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "misconceptionCode": "whole_to_rational_relation_error",
+      "misconceptionByOption": {
+        "0": "whole_as_irrational_confusion",
+        "2": "whole_as_negative_confusion",
+        "3": "whole_as_nonreal_confusion"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "medium",
+    "complexity": 16,
+    "marks": 1,
+    "sort_order": 19,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Fill in the blank: pi is a(n) ____ number.",
+        "isVertical": true,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_1",
+        "type": "input",
+        "content": "",
+        "isVertical": false,
+        "hasAudio": false,
+        "expectedType": "string"
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_1\":\"irrational\"}",
+    "solution": "pi is non-terminating and non-repeating, so irrational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["irrational_numbers", "pi"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "misconceptionCode": "pi_classification_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 16,
+    "marks": 1,
+    "sort_order": 20,
+    "is_multi_select": true,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Select all integers.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["-9", "2/3", "0", "sqrt(16)"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [0, 2, 3],
+    "correct_answer_text": null,
+    "solution": "-9, 0, and sqrt(16)=4 are integers.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["integers", "square_roots"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "misconceptionCode": "integer_multi_select_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "sorting",
+    "difficulty": "medium",
+    "complexity": 17,
+    "marks": 1,
+    "sort_order": 21,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Arrange these from least to greatest: -2, -1.5, -3/2, 0.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [
+      { "id": "n1", "content": "-3/2" },
+      { "id": "n2", "content": "0" },
+      { "id": "n3", "content": "-2" },
+      { "id": "n4", "content": "-1.5" }
+    ],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "[\"n3\",\"n1\",\"n4\",\"n2\"]",
+    "solution": "-2 < -3/2 = -1.5 < 0.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["negative_numbers", "equivalent_forms"],
+      "targetComplexityBand": "mid",
+      "inputMode": "drag_sort",
+      "misconceptionCode": "negative_ordering_error",
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "medium",
+    "complexity": 17,
+    "marks": 1,
+    "sort_order": 22,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which one is NOT an integer?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["-11", "4.0", "9/3", "sqrt(5)"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 3,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "sqrt(5) is irrational and not an integer.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["integers", "equivalent_representations"],
+      "targetComplexityBand": "mid",
+      "inputMode": "default",
+      "misconceptionCode": "integer_identification_error",
+      "misconceptionByOption": {
+        "0": "negative_integer_denial",
+        "1": "decimal_integer_confusion",
+        "2": "fraction_integer_confusion"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "hard",
+    "complexity": 18,
+    "marks": 1,
+    "sort_order": 23,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which expression is irrational?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["sqrt(49)", "sqrt(2) + 1", "10/5", "-12"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "sqrt(2)+1 remains irrational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["irrational_operations", "square_roots"],
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "misconceptionCode": "irrational_operation_error",
+      "misconceptionByOption": {
+        "0": "perfect_square_root_confusion",
+        "2": "fraction_simplification_confusion",
+        "3": "integer_as_irrational_confusion"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "hard",
+    "complexity": 18,
+    "marks": 1,
+    "sort_order": 24,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which set notation is correct?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [
+      "Irrational ⊂ Rational",
+      "Whole ⊂ Irrational",
+      "Integers ⊂ Rational",
+      "Rational ⊂ Integers"
+    ],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 2,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Every integer can be written as p/q, so Integers are a subset of Rational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["set_notation", "subset_relations"],
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "misconceptionCode": "subset_notation_error",
+      "misconceptionByOption": {
+        "0": "irrational_subset_confusion",
+        "1": "whole_subset_confusion",
+        "3": "subset_reversal_error"
+      },
+      "isRemediation": false,
+      "remediationLevel": 0
+    }
+  },
+  {
+     
+    "type": "fillInTheBlank",
+    "difficulty": "hard",
+    "complexity": 19,
+    "marks": 1,
+    "sort_order": 25,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Fill in the blank: The decimal 0.272727... is ____.",
+        "isVertical": true,
+        "hasAudio": true
+      },
+      {
+        "id": "answer_1",
+        "type": "input",
+        "content": "",
+        "isVertical": false,
+        "hasAudio": false,
+        "expectedType": "string"
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "{\"answer_1\":\"rational\"}",
+    "solution": "A repeating decimal is rational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["repeating_decimals", "rational_numbers"],
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "misconceptionCode": "repeating_decimal_rule_error",
+      "remediationFor": ["decimal_pattern_misread", "repeating_decimal_confusion"],
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "hard",
+    "complexity": 19,
+    "marks": 1,
+    "sort_order": 26,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which number belongs to Rational but not Integer?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["-8", "2/5", "sqrt(16)", "0"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "2/5 is rational and not an integer.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["rational_non_integer", "set_difference"],
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "misconceptionCode": "rational_non_integer_identification_error",
+      "misconceptionByOption": {
+        "0": "integer_as_noninteger_confusion",
+        "2": "perfect_root_as_noninteger_confusion",
+        "3": "whole_as_noninteger_confusion"
+      },
+      "remediationFor": ["integer_vs_rational_confusion", "rational_integer_overgeneralization"],
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "sorting",
+    "difficulty": "hard",
+    "complexity": 20,
+    "marks": 1,
+    "sort_order": 27,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Sort from smallest to largest: -sqrt(2), -1, 0, 1/sqrt(2).",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [
+      { "id": "n1", "content": "0" },
+      { "id": "n2", "content": "-sqrt(2)" },
+      { "id": "n3", "content": "1/sqrt(2)" },
+      { "id": "n4", "content": "-1" }
+    ],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": "[\"n2\",\"n4\",\"n1\",\"n3\"]",
+    "solution": "-sqrt(2) ≈ -1.414 < -1 < 0 < 1/sqrt(2) ≈ 0.707.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["approximation", "number_line_order", "irrational_comparison"],
+      "targetComplexityBand": "high",
+      "inputMode": "drag_sort",
+      "misconceptionCode": "approximation_ordering_error",
+      "remediationFor": ["mixed_ordering_error", "negative_ordering_error"],
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "hard",
+    "complexity": 21,
+    "marks": 1,
+    "sort_order": 28,
+    "is_multi_select": true,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Select all irrational numbers.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": ["sqrt(18)", "0.333...", "pi", "-4/7"],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [0, 2],
+    "correct_answer_text": null,
+    "solution": "sqrt(18) and pi are irrational. 0.333... and -4/7 are rational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["irrational_numbers", "repeating_decimals", "roots"],
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "misconceptionCode": "irrational_multi_select_error",
+      "remediationFor": ["irrational_identification_error", "root_classification_error"],
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "mcq",
+    "difficulty": "hard",
+    "complexity": 22,
+    "marks": 1,
+    "sort_order": 29,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": false,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Which one is true about irrational numbers?",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [
+      "They can be written as p/q exactly.",
+      "Their decimal form always terminates.",
+      "Their decimal form is non-terminating and non-repeating.",
+      "They are all negative."
+    ],
+    "items": [],
+    "drag_items": [],
+    "drop_groups": [],
+    "correct_answer_index": 2,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "Irrational numbers have non-terminating, non-repeating decimal expansions.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["irrational_definition", "decimal_forms"],
+      "targetComplexityBand": "high",
+      "inputMode": "default",
+      "misconceptionCode": "irrational_definition_error",
+      "misconceptionByOption": {
+        "0": "fraction_form_confusion",
+        "1": "terminating_decimal_confusion",
+        "3": "sign_based_confusion"
+      },
+      "remediationFor": ["irrational_definition_error", "repeating_decimal_confusion"],
+      "isRemediation": true,
+      "remediationLevel": 1
+    }
+  },
+  {
+     
+    "type": "dragAndDrop",
+    "difficulty": "hard",
+    "complexity": 23,
+    "marks": 1,
+    "sort_order": 30,
+    "is_multi_select": false,
+    "is_vertical": false,
+    "show_submit_button": true,
+    "parts": [
+      {
+        "id": "p1",
+        "type": "text",
+        "content": "Final challenge: Place each number in the most specific set.",
+        "isVertical": true,
+        "hasAudio": true
+      }
+    ],
+    "options": [],
+    "items": [],
+    "drag_items": [
+      { "id": "d1", "content": "6", "targetGroupId": "g_whole" },
+      { "id": "d2", "content": "-9", "targetGroupId": "g_integer" },
+      { "id": "d3", "content": "7/8", "targetGroupId": "g_rational" },
+      { "id": "d4", "content": "sqrt(19)", "targetGroupId": "g_irrational" }
+    ],
+    "drop_groups": [
+      { "id": "g_whole", "label": "Whole (most specific)" },
+      { "id": "g_integer", "label": "Integer (not whole)" },
+      { "id": "g_rational", "label": "Rational (non-integer)" },
+      { "id": "g_irrational", "label": "Irrational" }
+    ],
+    "correct_answer_index": -1,
+    "correct_answer_indices": [],
+    "correct_answer_text": null,
+    "solution": "6 is whole, -9 is integer, 7/8 is rational non-integer, and sqrt(19) is irrational.",
+    "adaptive_config": {
+      "policyVersion": "misconception_v2",
+      "conceptTags": ["most_specific_set", "real_number_tree_mastery"],
+      "targetComplexityBand": "high",
+      "inputMode": "manipulative",
+      "misconceptionCode": "most_specific_classification_error",
+      "remediationFor": ["classification_error", "set_hierarchy_order_error", "subset_notation_error"],
+      "isRemediation": true,
+      "remediationLevel": 2
+    }
+  }
+]

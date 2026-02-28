@@ -92,6 +92,55 @@ function normalizeSortingItems(items) {
   });
 }
 
+function normalizePart(part) {
+  const raw = typeof part === 'object' && part !== null ? part : { type: 'text', content: String(part ?? '') };
+  const normalized = {
+    ...raw,
+    type: raw.type ?? 'text',
+    isVertical: toBoolean(raw.isVertical ?? raw.is_vertical, false),
+  };
+
+  if (Array.isArray(raw.children)) {
+    normalized.children = raw.children.map(normalizePart);
+  }
+
+  return normalized;
+}
+
+function normalizeParts(parts) {
+  const list = Array.isArray(parts) ? parts : [];
+  return list.map(normalizePart);
+}
+
+function normalizeQuestionType(value) {
+  const raw = String(value ?? '').trim();
+  const lowered = raw.toLowerCase();
+
+  const aliases = {
+    fillintheblank: 'fillInTheBlank',
+    fill_in_the_blank: 'fillInTheBlank',
+    'fill-in-the-blank': 'fillInTheBlank',
+    imagechoice: 'imageChoice',
+    image_choice: 'imageChoice',
+    textinput: 'textInput',
+    text_input: 'textInput',
+    draganddrop: 'dragAndDrop',
+    drag_and_drop: 'dragAndDrop',
+    fourpicsoneword: 'fourPicsOneWord',
+    four_pics_one_word: 'fourPicsOneWord',
+    'four-pics-one-word': 'fourPicsOneWord',
+    measure: 'measure',
+    shadegrid: 'shadeGrid',
+    shade_grid: 'shadeGrid',
+    'shade-grid': 'shadeGrid',
+    sorting: 'sorting',
+    mcq: 'mcq',
+  };
+
+  if (aliases[lowered]) return aliases[lowered];
+  return raw;
+}
+
 export function mapDbQuestion(row) {
   const parsedOptions = parseMaybeJson(row.options, []);
   const parsedItems = parseMaybeJson(row.items, []);
@@ -112,8 +161,9 @@ export function mapDbQuestion(row) {
   return {
     id: row.id,
     microSkillId: row.micro_skill_id ?? row.microskill_id ?? null,
-    type: row.type,
-    parts: parseMaybeJson(row.parts, []),
+    questionText: row.question_text ?? row.questionText ?? '',
+    type: normalizeQuestionType(row.type),
+    parts: normalizeParts(parseMaybeJson(row.parts, [])),
     options: parsedOptions,
     items,
     dragItems,
