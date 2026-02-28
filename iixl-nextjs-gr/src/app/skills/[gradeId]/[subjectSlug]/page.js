@@ -75,7 +75,7 @@ export default async function SkillsPage({ params }) {
                     </Link>
                     <nav className={styles.nav}>
                         <a href="#" className={styles.navLink}>Learning</a>
-                        <a href="#" className={styles.navLink}>Analytics</a>
+                        <Link href="/analytics" className={styles.navLink}>Analytics</Link>
                     </nav>
                     <div className={styles.authButtons}>
                         <button className={styles.signInBtn}>Sign in</button>
