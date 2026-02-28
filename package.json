@@ -1,7 +1,0 @@
-{
-    "name": "wexls-root",
-    "private": true,
-    "scripts": {
-        "build": "cd iixl-nextjs-gr && npm install && npm run build"
-    }
-}
