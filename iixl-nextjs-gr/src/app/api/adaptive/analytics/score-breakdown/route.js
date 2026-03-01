@@ -134,7 +134,21 @@ export async function POST(req) {
       return NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 });
     }
 
-    const studentId = String(payload?.studentId ?? '').trim();
+    const supabase = createServerClient();
+    if (!supabase) {
+      return NextResponse.json({ error: 'Supabase is not configured on server.' }, { status: 500 });
+    }
+
+    // Secure the request by getting the actual server-side authenticated user
+    const { data: { user } } = await supabase.auth.getUser();
+
+    const studentId = (user?.id)
+      ? String(user.id)
+      : String(payload?.studentId ?? '').trim();
+
+    if (!studentId) {
+      return NextResponse.json({ error: 'studentId is required or you must be logged in.' }, { status: 400 });
+    }
     const microskillKey = String(payload?.microSkillId ?? payload?.microskillId ?? '').trim();
     const limitRaw = Number(payload?.limit ?? 30);
     const limit = Number.isFinite(limitRaw) ? Math.min(200, Math.max(1, Math.floor(limitRaw))) : 30;
@@ -149,11 +163,6 @@ export async function POST(req) {
     const microskillId = await resolveMicroskillIdByKey(microskillKey);
     if (!microskillId) {
       return NextResponse.json({ error: 'Microskill not found.' }, { status: 404 });
-    }
-
-    const supabase = createServerClient();
-    if (!supabase) {
-      return NextResponse.json({ error: 'Supabase is not configured on server.' }, { status: 500 });
     }
 
     const buildBaseQuery = (selectClause) => supabase

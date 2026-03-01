@@ -14,9 +14,15 @@ export async function POST(req) {
         return NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 });
     }
 
-    const studentId = String(payload?.studentId ?? '').trim();
+    // Secure the request by getting the actual server-side authenticated user
+    const { data: { user } } = await supabase.auth.getUser();
+
+    const studentId = (user?.id)
+        ? String(user.id)
+        : String(payload?.studentId ?? '').trim();
+
     if (!studentId) {
-        return NextResponse.json({ error: 'studentId is required.' }, { status: 400 });
+        return NextResponse.json({ error: 'studentId is required or you must be logged in.' }, { status: 400 });
     }
 
     const [attemptsRes, logsRes, skillStateRes] = await Promise.all([
