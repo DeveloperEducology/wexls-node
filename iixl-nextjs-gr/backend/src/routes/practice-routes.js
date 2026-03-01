@@ -44,7 +44,7 @@ router.get("/:microskillId", async (req, res) => {
 router.post("/:microskillId/submit", async (req, res) => {
   try {
     const microskillId = String(req.params.microskillId || "").trim();
-    const { questionId, answer = null, seenQuestionIds = [], studentId = null } = req.body || {};
+    const { questionId, answer = null, seenQuestionIds = [], studentId = null, responseMs = 0 } = req.body || {};
     if (!microskillId) return res.status(400).json({ error: "microskillId is required." });
     if (!questionId) return res.status(400).json({ error: "questionId is required." });
 
@@ -72,6 +72,7 @@ router.post("/:microskillId/submit", async (req, res) => {
         micro_skill_id: microskillId,
         question_id: String(questionId),
         is_correct: isCorrect,
+        response_ms: Number(responseMs || 0),
         answer_payload: answer,
         created_at: new Date().toISOString(),
       });

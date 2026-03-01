@@ -301,5 +301,26 @@ export function createServerClient() {
     async rpc(_name, _params) {
       return { data: null, error: { message: 'RPC not implemented in Mongo mode.' } };
     },
+    auth: {
+      async getUser() {
+        try {
+          // Attempt to find user ID from cookies for SSR/API context
+          const { cookies } = await import('next/headers');
+          const cookieStore = await cookies();
+          const userId = cookieStore.get('wexls_user_id')?.value;
+
+          if (!userId) return { data: { user: null }, error: null };
+
+          await connectMongo();
+          const userDoc = await mongoose.connection.db.collection('users').findOne(idCondition(userId));
+
+          if (!userDoc) return { data: { user: null }, error: null };
+
+          return { data: { user: normalizeDoc(userDoc) }, error: null };
+        } catch (e) {
+          return { data: { user: null }, error: e };
+        }
+      }
+    }
   };
 }

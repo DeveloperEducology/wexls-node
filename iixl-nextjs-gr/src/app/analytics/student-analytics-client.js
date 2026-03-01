@@ -70,8 +70,22 @@ export default function StudentAnalyticsClient() {
                 });
 
                 const [optRes, statRes] = await Promise.all([optPromise, statPromise]);
-                const optPayload = await optRes.json();
-                const statPayload = await statRes.json();
+
+                let optPayload = { microSkillOptions: [] };
+                try {
+                    const optRaw = await optRes.text();
+                    if (optRes.ok && optRaw) optPayload = JSON.parse(optRaw);
+                } catch (e) {
+                    console.error("Failed to parse options JSON", e);
+                }
+
+                let statPayload = { totalHours: 0, totalMinutes: 0, skillsStarted: 0, skillsMastered: 0 };
+                try {
+                    const statRaw = await statRes.text();
+                    if (statRes.ok && statRaw) statPayload = JSON.parse(statRaw);
+                } catch (e) {
+                    console.error("Failed to parse summary JSON", e);
+                }
 
                 if (!active) return;
 

@@ -14,8 +14,14 @@ function readUser() {
 
 function writeUser(user) {
   if (typeof window === 'undefined') return;
-  if (!user) window.localStorage.removeItem(USER_KEY);
-  else window.localStorage.setItem(USER_KEY, JSON.stringify(user));
+  if (!user) {
+    window.localStorage.removeItem(USER_KEY);
+    document.cookie = "wexls_user_id=; path=/; max-age=0";
+  } else {
+    window.localStorage.setItem(USER_KEY, JSON.stringify(user));
+    // Set cookie for 7 days
+    document.cookie = `wexls_user_id=${user.id || user._id}; path=/; max-age=${7 * 24 * 60 * 60}; sameSite=Lax`;
+  }
 }
 
 function emitAuth(event, user) {

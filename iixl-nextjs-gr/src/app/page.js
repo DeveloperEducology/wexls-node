@@ -2,8 +2,9 @@ import Hero from '@/components/Hero';
 import GradeCard from '@/components/GradeCard';
 import HomeAuthStatus from '@/components/HomeAuthStatus';
 import styles from './page.module.css';
-import { getHomeGradesData } from '@/lib/curriculum/server';
+import { Suspense } from 'react';
 import Link from 'next/link';
+import GradesDisplay, { GradesSkeleton } from '@/components/home/GradesDisplay';
 
 export const metadata = {
   title: 'Home',
@@ -16,8 +17,6 @@ export const metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
-  const grades = await getHomeGradesData();
-
   return (
     <main className={styles.main}>
       <header className={styles.header}>
@@ -47,16 +46,9 @@ export default async function Home() {
             Start your personalized learning journey today
           </p>
 
-          <div className={styles.gradesGrid}>
-            {grades.map((grade, index) => (
-              <GradeCard
-                key={grade.id}
-                grade={grade}
-                index={index}
-                subjects={grade.subjects || []}
-              />
-            ))}
-          </div>
+          <Suspense fallback={<GradesSkeleton />}>
+            <GradesDisplay />
+          </Suspense>
         </div>
       </section>
 

@@ -149,6 +149,9 @@ router.post('/submit-and-next', async (req, res) => {
     const microskillId = String(req.body?.microSkillId || '').trim();
     const questionId = String(req.body?.questionId || '').trim();
     const answer = req.body?.answer ?? null;
+    const responseMs = Number(req.body?.responseMs || 0);
+    const hintUsed = Boolean(req.body?.hintUsed || false);
+    const attemptsOnQuestion = Number(req.body?.attemptsOnQuestion || 1);
 
     if (!sessionId || !studentId || !microskillId || !questionId) {
       return res.status(400).json({ error: 'sessionId, studentId, microSkillId and questionId are required.' });
@@ -176,6 +179,9 @@ router.post('/submit-and-next', async (req, res) => {
       micro_skill_id: microskillId,
       question_id: questionId,
       is_correct: isCorrect,
+      response_ms: responseMs,
+      hint_used: hintUsed,
+      attempts_on_question: attemptsOnQuestion,
       answer_payload: answer,
       created_at: new Date().toISOString(),
     });

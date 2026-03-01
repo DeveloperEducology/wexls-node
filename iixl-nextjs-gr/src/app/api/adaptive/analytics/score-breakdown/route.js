@@ -139,12 +139,13 @@ export async function POST(req) {
       return NextResponse.json({ error: 'Supabase is not configured on server.' }, { status: 500 });
     }
 
-    // Secure the request by getting the actual server-side authenticated user
+    // Secure the request: prioritize server-side user if available and no studentId provided.
+    // Allow teachers (who provide a studentId) to view data, but students (no studentId provided by UI) see only their own.
     const { data: { user } } = await supabase.auth.getUser();
 
-    const studentId = (user?.id)
-      ? String(user.id)
-      : String(payload?.studentId ?? '').trim();
+    const studentId = (payload?.studentId && user)
+      ? String(payload.studentId).trim()
+      : (user?.id ? String(user.id) : String(payload?.studentId ?? '').trim());
 
     if (!studentId) {
       return NextResponse.json({ error: 'studentId is required or you must be logged in.' }, { status: 400 });
