@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { connectMongo } from '@/lib/db/mongo';
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+
+const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_not_for_prod';
 
 export async function POST(req) {
     try {
@@ -26,9 +29,12 @@ export async function POST(req) {
             return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
         }
 
-        return NextResponse.json({
+        const userId = String(user.id || user._id);
+        const token = jwt.sign({ userId }, JWT_SECRET, { expiresIn: '7d' });
+
+        const response = NextResponse.json({
             user: {
-                id: user.id || user._id,
+                id: userId,
                 email: user.email,
                 user_metadata: {
                     name: user.name,
@@ -37,6 +43,17 @@ export async function POST(req) {
                 }
             }
         });
+
+        // Set HttpOnly session cookie
+        response.cookies.set('wexls_session', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'lax',
+            path: '/',
+            maxAge: 7 * 24 * 60 * 60 // 7 days
+        });
+
+        return response;
     } catch (error) {
         console.error('Login error:', error);
         return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

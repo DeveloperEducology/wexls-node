@@ -16,11 +16,9 @@ function writeUser(user) {
   if (typeof window === 'undefined') return;
   if (!user) {
     window.localStorage.removeItem(USER_KEY);
-    document.cookie = "wexls_user_id=; path=/; max-age=0";
+    // document.cookie = "wexls_user_id=; path=/; max-age=0"; // API should handle this too if we want, but let's keep it sync'd for client logic
   } else {
     window.localStorage.setItem(USER_KEY, JSON.stringify(user));
-    // Set cookie for 7 days
-    document.cookie = `wexls_user_id=${user.id || user._id}; path=/; max-age=${7 * 24 * 60 * 60}; sameSite=Lax`;
   }
 }
 
@@ -104,6 +102,11 @@ export function createClient() {
         };
       },
       async signOut() {
+        try {
+          await fetch('/api/auth/logout', { method: 'POST' });
+        } catch (e) {
+          console.error('Logout error:', e);
+        }
         writeUser(null);
         emitAuth('SIGNED_OUT', null);
         return { error: null };

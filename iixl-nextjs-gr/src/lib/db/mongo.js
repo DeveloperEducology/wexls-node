@@ -1,48 +1,47 @@
-const mongoose = require("mongoose");
-const path = require("path");
+import mongoose from 'mongoose';
 
-// Resolve path relative to this file to ensure it's always found regardless of cwd
-const envPath = path.resolve(__dirname, "../../.env.local");
-require("dotenv").config({ path: envPath });
-
-// Fallback to load root .env.local if backend one is missing
-require("dotenv").config({ path: path.resolve(__dirname, "../../../../.env.local") });
-
+/**
+ * Global is used here to maintain a cached connection across hot reloads
+ * in development. This prevents connections from growing exponentially
+ * during API Route usage.
+ */
 let cached = global.mongoose;
 
 if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
 }
 
-const connectDB = async () => {
+async function connectMongo() {
+  const uri = process.env.MONGODB_URI || process.env.MONGO_URI;
+
+  if (!uri) {
+    throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
+  }
+
   if (cached.conn) {
     return cached.conn;
   }
 
-  if (mongoose.connection.readyState >= 1) {
-    return mongoose.connection;
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+      serverSelectionTimeoutMS: 10000,
+    };
+
+    cached.promise = mongoose.connect(uri, opts).then((mongooseInstance) => {
+      console.log('[MongoDB] New connection established');
+      return mongooseInstance;
+    });
   }
 
   try {
-    const uri = process.env.MONGODB_URI;
-    if (!uri) throw new Error("MONGODB_URI not defined in environment variables");
-
-    if (!cached.promise) {
-      cached.promise = mongoose.connect(uri).then((mongooseInstance) => {
-        console.log("MongoDB connected successfully");
-        return mongooseInstance.connection;
-      });
-    }
-
     cached.conn = await cached.promise;
-    return cached.conn;
-  } catch (error) {
-    console.error("MongoDB connection error:", error);
-    cached.promise = null; // Re-attempt on next call
-    // Don't exit process if running inside another app or dev environment
-    if (require.main === module) process.exit(1);
-    throw error;
+  } catch (e) {
+    cached.promise = null;
+    throw e;
   }
-};
 
-module.exports = { connectMongo: connectDB, connectDB };
+  return cached.conn;
+}
+
+export { connectMongo };

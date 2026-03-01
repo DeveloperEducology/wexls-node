@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { connectMongo } from '@/lib/db/mongo';
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+
+const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_not_for_prod';
 
 export async function POST(req) {
     try {
@@ -47,20 +50,30 @@ export async function POST(req) {
 
         await db.collection('users').insertOne(newUser);
 
-        // Return user without password hash
-        const { password_hash, ...userProfile } = newUser;
+        const token = jwt.sign({ userId: newUser.id }, JWT_SECRET, { expiresIn: '7d' });
 
-        return NextResponse.json({
+        const response = NextResponse.json({
             user: {
-                id: userProfile.id,
-                email: userProfile.email,
+                id: newUser.id,
+                email: newUser.email,
                 user_metadata: {
-                    name: userProfile.name,
-                    birthYear: userProfile.birth_year,
-                    gradeId: userProfile.grade_id
+                    name: newUser.name,
+                    birthYear: newUser.birth_year,
+                    gradeId: newUser.grade_id
                 }
             }
         });
+
+        // Set HttpOnly session cookie
+        response.cookies.set('wexls_session', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'lax',
+            path: '/',
+            maxAge: 7 * 24 * 60 * 60 // 7 days
+        });
+
+        return response;
     } catch (error) {
         console.error('Registration error:', error);
         return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

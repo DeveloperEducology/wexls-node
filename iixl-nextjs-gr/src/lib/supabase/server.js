@@ -1,50 +1,8 @@
 import mongoose from 'mongoose';
-import fs from 'fs';
-import path from 'path';
+import jwt from 'jsonwebtoken';
+import { connectMongo } from '@/lib/db/mongo';
 
-let mongoConnectPromise = null;
-
-function getMongoUri() {
-  const raw = (
-    process.env.MONGODB_URI ||
-    process.env.MONGO_URI ||
-    process.env.NEXT_PUBLIC_MONGODB_URI ||
-    ''
-  );
-  const fromEnv = String(raw).trim().replace(/^['"]|['"]$/g, '');
-  if (fromEnv) return fromEnv;
-
-  // Fallback for dev/runtime setups where process.env is not hydrated as expected.
-  try {
-    const envPath = path.join(process.cwd(), '.env.local');
-    if (!fs.existsSync(envPath)) return '';
-    const content = fs.readFileSync(envPath, 'utf8');
-    const line = content
-      .split('\n')
-      .map((l) => l.trim())
-      .find((l) => l.startsWith('MONGODB_URI='));
-    if (!line) return '';
-    return line.slice('MONGODB_URI='.length).trim().replace(/^['"]|['"]$/g, '');
-  } catch {
-    return '';
-  }
-}
-
-async function connectMongo() {
-  if (mongoose.connection.readyState === 1) return mongoose.connection;
-  const uri = getMongoUri();
-  if (!uri) return null;
-
-  if (!mongoConnectPromise) {
-    mongoConnectPromise = mongoose.connect(uri, {
-      serverSelectionTimeoutMS: 10000,
-      maxPoolSize: 10,
-    });
-  }
-
-  await mongoConnectPromise;
-  return mongoose.connection;
-}
+const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_not_for_prod';
 
 function normalizeDoc(doc) {
   if (!doc) return doc;
@@ -288,11 +246,7 @@ class MongoQuery {
 }
 
 export function createServerClient() {
-  const uri = getMongoUri();
-  if (!uri) return null;
-
-  const connection = mongoose.connection;
-  const db = connection?.db;
+  const db = mongoose.connection?.db;
 
   return {
     from(table) {
@@ -304,11 +258,22 @@ export function createServerClient() {
     auth: {
       async getUser() {
         try {
-          // Attempt to find user ID from cookies for SSR/API context
           const { cookies } = await import('next/headers');
           const cookieStore = await cookies();
-          const userId = cookieStore.get('wexls_user_id')?.value;
+          const sessionToken = cookieStore.get('wexls_session')?.value;
 
+          if (!sessionToken) return { data: { user: null }, error: null };
+
+          // Verify JWT
+          let decoded;
+          try {
+            decoded = jwt.verify(sessionToken, JWT_SECRET);
+          } catch (err) {
+            console.error('Invalid session token:', err.message);
+            return { data: { user: null }, error: new Error('Invalid or expired session.') };
+          }
+
+          const userId = decoded.userId;
           if (!userId) return { data: { user: null }, error: null };
 
           await connectMongo();
