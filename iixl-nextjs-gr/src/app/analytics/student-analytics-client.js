@@ -30,6 +30,7 @@ export default function StudentAnalyticsClient() {
     const [error, setError] = useState('');
     const [data, setData] = useState(null);
     const [optionData, setOptionData] = useState({ microSkillOptions: [] });
+    const [summaryStats, setSummaryStats] = useState({ totalHours: 0, totalMinutes: 0, skillsStarted: 0, skillsMastered: 0 });
     const [hasLoaded, setHasLoaded] = useState(false);
     const [userChecked, setUserChecked] = useState(false);
 
@@ -51,31 +52,50 @@ export default function StudentAnalyticsClient() {
 
     useEffect(() => {
         let active = true;
-        const loadOptions = async () => {
+        const loadInitialData = async () => {
             if (!studentId) return;
             try {
-                const res = await fetch('/api/adaptive/analytics/my-options', {
+                // Fetch Options
+                const optPromise = fetch('/api/adaptive/analytics/my-options', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ studentId }),
                 });
-                const payload = await res.json();
-                if (!res.ok || !active) return;
-                setOptionData({
-                    microSkillOptions: payload.microSkillOptions || [],
+
+                // Fetch Summary Stats
+                const statPromise = fetch('/api/adaptive/analytics/my-summary', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ studentId }),
                 });
-                if (payload.microSkillOptions?.length > 0 && !selectedMicroSkill) {
-                    const firstSkill = payload.microSkillOptions[0].id;
-                    setSelectedMicroSkill(firstSkill);
-                    setMicroSkillId(firstSkill);
-                }
-            } catch {
+
+                const [optRes, statRes] = await Promise.all([optPromise, statPromise]);
+                const optPayload = await optRes.json();
+                const statPayload = await statRes.json();
+
                 if (!active) return;
+
+                if (optRes.ok) {
+                    setOptionData({
+                        microSkillOptions: optPayload.microSkillOptions || [],
+                    });
+                    if (optPayload.microSkillOptions?.length > 0 && !selectedMicroSkill) {
+                        const firstSkill = optPayload.microSkillOptions[0].id;
+                        setSelectedMicroSkill(firstSkill);
+                        setMicroSkillId(firstSkill);
+                    }
+                }
+
+                if (statRes.ok) {
+                    setSummaryStats(statPayload);
+                }
+            } catch (err) {
+                console.error("Failed to load student dashboard data", err);
             }
         };
 
         if (userChecked && studentId) {
-            loadOptions();
+            loadInitialData();
         }
         return () => {
             active = false;
@@ -152,6 +172,25 @@ export default function StudentAnalyticsClient() {
             <div className={styles.header}>
                 <h1>My Analytics</h1>
                 <Link href="/" className={styles.homeLink}>Back Home</Link>
+            </div>
+
+            <div className={styles.kpis} style={{ marginBottom: '2rem' }}>
+                <div className={styles.kpi}>
+                    <span>Total Learning Time</span>
+                    <strong>{summaryStats.totalHours > 0 ? `${summaryStats.totalHours} hrs` : `${summaryStats.totalMinutes} mins`}</strong>
+                </div>
+                <div className={styles.kpi}>
+                    <span>Skills Mastered</span>
+                    <strong>{summaryStats.skillsMastered}</strong>
+                </div>
+                <div className={styles.kpi}>
+                    <span>Skills Started</span>
+                    <strong>{summaryStats.skillsStarted}</strong>
+                </div>
+                <div className={styles.kpi}>
+                    <span>Recent Student ID</span>
+                    <strong style={{ fontSize: '0.8rem', opacity: 0.7 }}>{studentId.slice(0, 8)}...</strong>
+                </div>
             </div>
 
             <div className={styles.controls}>

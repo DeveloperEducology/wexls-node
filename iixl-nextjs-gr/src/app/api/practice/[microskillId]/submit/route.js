@@ -420,6 +420,7 @@ async function insertLog(supabase, payload) {
       student_id: payload.studentId,
       question_id: payload.questionId,
       is_correct: payload.isCorrect,
+      response_ms: Number(payload.responseMs || 0),
       answer_payload: payload.answer,
       [skillColumn]: payload.microskillId,
     };
@@ -448,6 +449,7 @@ export async function POST(req, { params }) {
     studentId = null,
     questionId,
     answer = null,
+    responseMs = 0,
     seenQuestionIds = [],
   } = payload ?? {};
 
@@ -476,7 +478,7 @@ export async function POST(req, { params }) {
   const isCorrect = validateAnswer(currentQuestion, answer);
   const feedback = buildFeedback(currentQuestion);
 
-  await insertLog(supabase, { studentId, microskillId, questionId, isCorrect, answer });
+  await insertLog(supabase, { studentId, microskillId, questionId, isCorrect, answer, responseMs });
 
   const { data: rpcData, error: rpcError } = await supabase.rpc('submit_and_get_next', {
     p_student_id: studentId,

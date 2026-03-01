@@ -27,6 +27,7 @@ create table if not exists public.student_question_log (
   microskill_id uuid not null,
   question_id uuid not null references public.questions(id) on delete cascade,
   is_correct boolean not null,
+  response_ms int not null default 0,
   answer_payload jsonb,
   created_at timestamptz not null default now()
 );
