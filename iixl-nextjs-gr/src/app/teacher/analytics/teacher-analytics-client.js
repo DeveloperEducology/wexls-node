@@ -113,11 +113,10 @@ export default function TeacherAnalyticsClient({ initialStudentId = '', initialM
   }, []);
 
   useEffect(() => {
-    if (initialStudentId && initialMicroSkillId) {
+    if (studentId && microSkillId) {
       fetchData();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialStudentId, initialMicroSkillId]);
+  }, [studentId, microSkillId, dateFrom, dateTo, phase]);
 
   return (
     <div className={styles.page}>
@@ -137,7 +136,7 @@ export default function TeacherAnalyticsClient({ initialStudentId = '', initialM
         >
           <option value="">Select student</option>
           {optionData.studentOptions.map((item) => (
-            <option key={item.id} value={item.id}>{item.id}</option>
+            <option key={item.id} value={item.id}>{item.name}</option>
           ))}
         </select>
 

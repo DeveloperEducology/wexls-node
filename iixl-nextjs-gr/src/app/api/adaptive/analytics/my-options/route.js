@@ -33,12 +33,11 @@ export async function POST(req) {
         return NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 });
     }
 
-    // Secure the request by getting the actual server-side authenticated user
     const { data: { user } } = await supabase.auth.getUser();
 
-    const studentId = (user?.id)
-        ? String(user.id)
-        : String(payload?.studentId ?? '').trim();
+    const studentId = (payload?.studentId && user)
+        ? String(payload.studentId).trim()
+        : (user?.id ? String(user.id) : String(payload?.studentId ?? '').trim());
 
     if (!studentId) {
         return NextResponse.json({ error: 'studentId is required or you must be logged in.' }, { status: 400 });

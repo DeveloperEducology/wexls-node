@@ -26,26 +26,33 @@ export async function GET() {
     return NextResponse.json({ error: 'Supabase is not configured on server.' }, { status: 500 });
   }
 
-  const [{ data: attempts, error: attemptsError }, microskills] = await Promise.all([
+  const [{ data: attempts, error: attemptsError }, microskills, { data: usersData }] = await Promise.all([
     supabase
       .from('attempt_events')
       .select('student_id,micro_skill_id,created_at')
       .order('created_at', { ascending: false })
-      .limit(1000),
+      .limit(2000),
     fetchMicroskills(supabase),
+    supabase.from('users').select('id,email,name')
   ]);
 
   if (attemptsError) {
     return NextResponse.json({ error: attemptsError.message || 'Failed to load options.' }, { status: 500 });
   }
 
+  const userMap = new Map();
+  if (Array.isArray(usersData)) {
+    for (const u of usersData) userMap.set(String(u.id), u);
+  }
+
   const studentMap = new Map();
   const skillUseMap = new Map();
   for (const row of attempts || []) {
-    const studentId = String(row.student_id || '').trim();
+    const sId = String(row.student_id || '').trim();
     const microSkillId = String(row.micro_skill_id || '').trim();
-    if (studentId && !studentMap.has(studentId)) {
-      studentMap.set(studentId, { id: studentId });
+    if (sId && !studentMap.has(sId)) {
+      const u = userMap.get(sId);
+      studentMap.set(sId, { id: sId, name: u?.name || u?.email || sId });
     }
     if (microSkillId) {
       skillUseMap.set(microSkillId, (skillUseMap.get(microSkillId) || 0) + 1);
@@ -61,7 +68,7 @@ export async function GET() {
   }));
 
   return NextResponse.json({
-    studentOptions: Array.from(studentMap.values()),
+    studentOptions: Array.from(studentMap.values()).sort((a, b) => String(a.name).localeCompare(String(b.name))),
     microSkillOptions: microskillOptions,
   });
 }
