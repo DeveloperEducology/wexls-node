@@ -14,12 +14,12 @@ export async function POST(req) {
         return NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 });
     }
 
-    // Secure the request: prioritize payload studentId if a user is present (allows teachers to view specific students)
     const { data: { user } } = await supabase.auth.getUser();
 
-    const studentId = (payload?.studentId && user)
-        ? String(payload.studentId).trim()
-        : (user?.id ? String(user.id) : String(payload?.studentId ?? '').trim());
+    // Secure the request: If a user is logged in, use their ID. Guest ID only as fallback for unauthenticated.
+    const studentId = user?.id
+        ? String(user.id)
+        : (payload?.studentId ? String(payload.studentId).trim() : '');
 
     if (!studentId) {
         return NextResponse.json({ error: 'studentId is required or you must be logged in.' }, { status: 400 });

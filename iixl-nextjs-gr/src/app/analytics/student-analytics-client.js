@@ -33,16 +33,21 @@ export default function StudentAnalyticsClient() {
     const [summaryStats, setSummaryStats] = useState({ totalHours: 0, totalMinutes: 0, skillsStarted: 0, skillsMastered: 0 });
     const [hasLoaded, setHasLoaded] = useState(false);
     const [userChecked, setUserChecked] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
         async function loadUser() {
             const { data } = await supabase.auth.getUser();
             if (data?.user?.id) {
                 setStudentId(data.user.id);
+                setIsAuthenticated(true);
             } else {
-                const localId = typeof window !== 'undefined' ? localStorage.getItem('wexls_student_id') : null;
+                const localId = typeof window !== 'undefined'
+                    ? (localStorage.getItem('practice_student_id') || localStorage.getItem('wexls_student_id'))
+                    : null;
                 if (localId) setStudentId(localId);
                 else setError('Please sign in or start practicing to view your analytics.');
+                setIsAuthenticated(false);
             }
             setUserChecked(true);
             setLoading(false);
@@ -59,14 +64,14 @@ export default function StudentAnalyticsClient() {
                 const optPromise = fetch('/api/adaptive/analytics/my-options', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ studentId }),
+                    body: JSON.stringify({ studentId: isAuthenticated ? undefined : studentId }),
                 });
 
                 // Fetch Summary Stats
                 const statPromise = fetch('/api/adaptive/analytics/my-summary', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ studentId }),
+                    body: JSON.stringify({ studentId: isAuthenticated ? undefined : studentId }),
                 });
 
                 const [optRes, statRes] = await Promise.all([optPromise, statPromise]);
@@ -129,7 +134,7 @@ export default function StudentAnalyticsClient() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    studentId,
+                    studentId: isAuthenticated ? undefined : studentId,
                     microSkillId,
                     limit: 80,
                     dateFrom: dateFrom || undefined,
@@ -202,8 +207,10 @@ export default function StudentAnalyticsClient() {
                     <strong>{summaryStats.skillsStarted}</strong>
                 </div>
                 <div className={styles.kpi}>
-                    <span>Recent Student ID</span>
-                    <strong style={{ fontSize: '0.8rem', opacity: 0.7 }}>{studentId.slice(0, 8)}...</strong>
+                    <span>Session Profile</span>
+                    <strong style={{ fontSize: '0.8rem', opacity: 0.7 }}>
+                        {isAuthenticated ? 'Authenticated Account' : 'Guest Learner (Offline)'}
+                    </strong>
                 </div>
             </div>
 

@@ -35,9 +35,10 @@ export async function POST(req) {
 
     const { data: { user } } = await supabase.auth.getUser();
 
-    const studentId = (payload?.studentId && user)
-        ? String(payload.studentId).trim()
-        : (user?.id ? String(user.id) : String(payload?.studentId ?? '').trim());
+    // Secure the request: prioritize authenticated user ID. Guest ID is only for unauthenticated users.
+    const studentId = user?.id
+        ? String(user.id)
+        : (payload?.studentId ? String(payload.studentId).trim() : '');
 
     if (!studentId) {
         return NextResponse.json({ error: 'studentId is required or you must be logged in.' }, { status: 400 });
