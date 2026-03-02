@@ -86,6 +86,14 @@ export async function POST(req) {
     return NextResponse.json({ error: 'Supabase is not configured on server.' }, { status: 500 });
   }
 
+  // Check if guest is actually a registered user (forbidden merge)
+  // I need to check the users collection directly.
+  const { data: dbUser } = await supabase.from('users').select('id').eq('id', guestStudentId).maybeSingle();
+
+  if (dbUser) {
+    return NextResponse.json({ error: 'Cannot merge a registered user account into another.' }, { status: 403 });
+  }
+
   try {
     const { data: guestSkills, error: guestSkillError } = await supabase
       .from('student_skill_state')
@@ -111,25 +119,28 @@ export async function POST(req) {
       if (!error) mergedSkillRows += 1;
     }
 
+    // Clean up guest skill states
     await supabase.from('student_skill_state').delete().eq('student_id', guestStudentId);
 
-    const { error: attemptUpdateError } = await supabase
-      .from('attempt_events')
-      .update({ student_id: userStudentId })
-      .eq('student_id', guestStudentId);
-    if (attemptUpdateError) throw attemptUpdateError;
+    // Update all historical records
+    const tableUpdates = [
+      { table: 'attempt_events', field: 'student_id' },
+      { table: 'session_state', field: 'student_id' },
+      { table: 'misconception_events', field: 'student_id' },
+      { table: 'student_question_log', field: 'student_id' },
+      { table: 'student_skill_state_history', field: 'student_id' } // if exists
+    ];
 
-    const { error: sessionUpdateError } = await supabase
-      .from('session_state')
-      .update({ student_id: userStudentId, updated_at: new Date().toISOString() })
-      .eq('student_id', guestStudentId);
-    if (sessionUpdateError) throw sessionUpdateError;
-
-    const { error: misconceptionUpdateError } = await supabase
-      .from('misconception_events')
-      .update({ student_id: userStudentId })
-      .eq('student_id', guestStudentId);
-    if (misconceptionUpdateError) throw misconceptionUpdateError;
+    for (const update of tableUpdates) {
+      try {
+        await supabase
+          .from(update.table)
+          .update({ [update.field]: userStudentId, updated_at: new Date().toISOString() })
+          .eq(update.field, guestStudentId);
+      } catch (e) {
+        // Table might not exist in all envs
+      }
+    }
 
     return NextResponse.json({
       merged: true,

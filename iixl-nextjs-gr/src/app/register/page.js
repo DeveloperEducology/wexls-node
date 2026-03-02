@@ -19,8 +19,10 @@ export default function RegisterPage() {
 
   const mergeGuestProgress = async (userId) => {
     if (typeof window === 'undefined') return;
-    const key = 'practice_student_id';
-    const guestId = window.localStorage.getItem(key);
+    const key = 'wexls_guest_id';
+    const legacyKey = 'practice_student_id';
+    const guestId = window.localStorage.getItem(key) || window.localStorage.getItem(legacyKey);
+
     if (!guestId || guestId === userId) return;
 
     try {
@@ -32,9 +34,11 @@ export default function RegisterPage() {
           userStudentId: userId,
         }),
       });
-      window.localStorage.setItem(key, userId);
+      // Clear guest IDs so next person on this browser starts fresh
+      window.localStorage.removeItem(key);
+      window.localStorage.removeItem(legacyKey);
     } catch {
-      // merge is best-effort and should not block register flow
+      // merge is best-effort
     }
   };
 

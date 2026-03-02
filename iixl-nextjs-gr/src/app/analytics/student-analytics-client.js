@@ -65,6 +65,7 @@ export default function StudentAnalyticsClient() {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ studentId: isAuthenticated ? undefined : studentId }),
+                    cache: 'no-store'
                 });
 
                 // Fetch Summary Stats
@@ -72,6 +73,7 @@ export default function StudentAnalyticsClient() {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ studentId: isAuthenticated ? undefined : studentId }),
+                    cache: 'no-store'
                 });
 
                 const [optRes, statRes] = await Promise.all([optPromise, statPromise]);
@@ -139,8 +141,9 @@ export default function StudentAnalyticsClient() {
                     limit: 80,
                     dateFrom: dateFrom || undefined,
                     dateTo: dateTo || undefined,
-                    phase: phase || undefined,
+                    phase: phase || undefined
                 }),
+                cache: 'no-store'
             });
             const raw = await res.text();
             let payload = {};

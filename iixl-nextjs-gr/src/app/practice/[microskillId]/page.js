@@ -296,21 +296,19 @@ function getSelectedAnswerDisplay(question, answer) {
   return String(answer ?? '');
 }
 
-function getOrCreateStudentId() {
+function getCurrentGuestId() {
   if (typeof window === 'undefined') return null;
+  const key = 'wexls_guest_id';
+  const legacyKey = 'practice_student_id';
+  return window.localStorage.getItem(key) || window.localStorage.getItem(legacyKey);
+}
 
-  const key = 'practice_student_id';
-  const existing = window.localStorage.getItem(key);
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-  if (existing) {
-    if (uuidRegex.test(existing)) return existing;
-    const maybeSuffix = existing.replace(/^student-/, '');
-    if (uuidRegex.test(maybeSuffix)) {
-      window.localStorage.setItem(key, maybeSuffix);
-      return maybeSuffix;
-    }
-  }
+function getOrCreateGuestId() {
+  if (typeof window === 'undefined') return null;
+  const existing = getCurrentGuestId();
+  if (existing) return existing;
 
+  const key = 'wexls_guest_id';
   const created = crypto.randomUUID();
   window.localStorage.setItem(key, created);
   return created;
@@ -331,14 +329,16 @@ function setStoredAdaptiveSessionId(skillId, sessionId) {
 }
 
 async function resolveStudentId() {
-  const guestId = getOrCreateStudentId();
-
   try {
     const supabase = createClient();
     const { data } = await supabase.auth.getUser();
     const authUserId = data?.user?.id ? String(data.user.id) : '';
-    if (!authUserId) return guestId;
 
+    // If not logged in, return current or new guest ID
+    if (!authUserId) return getOrCreateGuestId();
+
+    // If logged in, check if there's a PENDING guest session to merge
+    const guestId = getCurrentGuestId();
     if (typeof window !== 'undefined' && guestId && guestId !== authUserId) {
       try {
         await fetch('/api/adaptive/merge-guest-progress', {
@@ -349,17 +349,16 @@ async function resolveStudentId() {
             userStudentId: authUserId,
           }),
         });
-      } catch {
-        // best effort merge only
+        // Remove guest evidence so we don't try to merge again
+        window.localStorage.removeItem('wexls_guest_id');
+        window.localStorage.removeItem('practice_student_id');
+      } catch (err) {
+        console.error('Merge error:', err);
       }
-    }
-
-    if (typeof window !== 'undefined') {
-      window.localStorage.setItem('practice_student_id', authUserId);
     }
     return authUserId;
   } catch {
-    return guestId;
+    return getOrCreateGuestId();
   }
 }
 

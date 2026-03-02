@@ -15,8 +15,10 @@ export default function LoginPage() {
 
   const mergeGuestProgress = async (userId) => {
     if (typeof window === 'undefined') return;
-    const key = 'practice_student_id';
-    const guestId = window.localStorage.getItem(key);
+    const key = 'wexls_guest_id';
+    const legacyKey = 'practice_student_id';
+    const guestId = window.localStorage.getItem(key) || window.localStorage.getItem(legacyKey);
+
     if (!guestId || guestId === userId) return;
 
     try {
@@ -28,9 +30,11 @@ export default function LoginPage() {
           userStudentId: userId,
         }),
       });
-      window.localStorage.setItem(key, userId);
+      // Clear all guest IDs so browser is now purely in user mode
+      window.localStorage.removeItem(key);
+      window.localStorage.removeItem(legacyKey);
     } catch {
-      // merge is best-effort and should not block login
+      // best effort merge
     }
   };
 

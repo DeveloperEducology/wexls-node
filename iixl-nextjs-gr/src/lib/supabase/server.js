@@ -70,9 +70,23 @@ class MongoQuery {
   }
 
   eq(column, value) {
+    // SECURITY: Prevent empty or undefined filters that could cause a global return
+    if (value === undefined || value === null || value === '') {
+      if (column === 'student_id' || column === 'id') {
+        console.warn(`[MongoQuery] CRITICAL Warning: Empty filter attempted on ${column}. Forcing no-match to prevent leak.`);
+        this._filter = mergeFilter(this._filter, { [column]: '_____FORCE_EMPTY_MATCH_____' });
+        return this;
+      }
+      return this; // Skip for other non-critical columns
+    }
+
     const condition = column === 'id' ? idCondition(value) : { [column]: value };
     this._filter = mergeFilter(this._filter, condition);
     return this;
+  }
+
+  _dump() {
+    return { table: this.table, filter: JSON.stringify(this._filter) };
   }
 
   gte(column, value) {
